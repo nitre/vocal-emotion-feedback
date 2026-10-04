@@ -55,8 +55,8 @@ Only the shifter delay line adds delay. plugdata's audio buffers are additional.
 Printed once a second:
 | Line | Meaning |
 |---|---|
-| `mic_in_dB`, `src_dB`, `out_dB` | raw mic, after USE_MIC and MIC GAIN, final output (100 = full scale) |
-| `f0_Hz` | tracked pitch, 0 = none |
+| `mic_in_dB`, `after_gain_dB`, `out_dB` | raw mic, after USE_MIC and MIC GAIN, final output (100 = full scale) |
+| `pitch_Hz` | tracked pitch, 0 = none |
 | `window_ms` | shifter window |
 | `shift_cents` | total pitch shift being applied (preset level plus vibrato and inflection) |
 | `delay_ms` | shifter delay, about window / 2 + 1.6 ms, plugdata's buffers not included |
