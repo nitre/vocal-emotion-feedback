@@ -42,16 +42,16 @@ Requires these objects (all vanilla Pd): `sigmund~` `expr` `expr~` `fexpr~` `sam
 ## Diagram
 ```mermaid
 flowchart TD
-    A[Mic] --> B[live_input<br/>high-pass 80 Hz → gate → gain]
+    A[Mic] --> B[live_input]
     B --> C[onset detector]
-    B --> D[pitch_control<br/>emotion → cents + glide + vibrato]
+    B --> D[pitch_control]
     C --> E[inflection swoop]
     E --> F[total cents]
     D --> F
-    F --> G[window_length<br/>SMOOTH or fixed]
-    G --> H[delay_line<br/>pitch shifter]
+    F --> G[window_length]
+    G --> H[delay_line]
     H --> I[high_shelf]
-    I --> J[output<br/>VOL + clip]
+    I --> J[output]
     J --> K[Headphones]
 ```
 
