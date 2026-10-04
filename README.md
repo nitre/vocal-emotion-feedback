@@ -37,17 +37,17 @@ Requires: `sigmund~` `expr` `expr~` `fexpr~` `samphold~` `rzero~` `vline~`. The 
 ## Parameters
 | | Pitch (cents) | High band above 8 kHz | Other |
 |---|---|---|---|
-| Happy low / mid / high | +29.5 / +40.9 / +50 | up to +9.5 dB/oct | inflection -200..+140 cents, 500 ms |
-| Sad low / mid / high | -39.8 / -56.2 / -70 | down to -12 dB/oct | |
+| Happy low / mid / high | about +30 / +41 / +50 | up to about +9.5 dB/oct | inflection -200..+140 cents, 500 ms |
+| Sad low / mid / high | about -40 / -56 / -70 | down to about -12 dB/oct | |
 | Afraid | | | vibrato 8.5 Hz, 30% rate spread |
 
 The high band is approximated by a 5th-order Butterworth shelf.
 
-## Latency (44.1 kHz)
+## Latency (roughly)
 | Setting | Delay |
 |---|---|
-| SMOOTH off | 291 samples (6.6 ms) |
-| SMOOTH on | 512 samples (11.6 ms) |
+| SMOOTH off | about 7 ms |
+| SMOOTH on | about 12 ms |
 
 Only the shifter delay line adds delay. plugdata's audio buffers are additional.
 
@@ -59,7 +59,7 @@ Printed once a second:
 | `f0_Hz` | tracked pitch, 0 = none |
 | `window_ms` | shifter window |
 | `shift_cents` | total pitch shift being applied (preset level plus vibrato and inflection) |
-| `delay_ms` | shifter delay: window / 2 + 1.6 ms, plugdata's buffers not included |
+| `delay_ms` | shifter delay, about window / 2 + 1.6 ms, plugdata's buffers not included |
 
 Tap a preset and read `shift_cents` and `delay_ms` to check the numbers in the tables above.
 
