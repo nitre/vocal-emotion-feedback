@@ -14,6 +14,7 @@ Live sad / happy / afraid voice effect for plugdata (iOS). Based on Rachman et a
 1. Put `vocal-emotion-feedback.pd` in plugdata's folder and open it.
 2. DSP on, run mode.
 3. Tick USE_MIC.
+4. With a noisy mic, raise GATE until the hiss stops.
 
 Requires these objects (all vanilla Pd): `sigmund~` `expr` `expr~` `fexpr~` `samphold~` `rzero~` `vline~` `delread4~` `biquad~`. The plugdata file also needs ELSE `knob` (bundled with plugdata, ELSE 1.0-0 RC9 or newer). If `sigmund~` is missing, turn SMOOTH off.
 
