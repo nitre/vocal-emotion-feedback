@@ -39,21 +39,6 @@ Requires these objects (all vanilla Pd): `sigmund~` `expr` `expr~` `fexpr~` `sam
 - Dynamic opposing shelf for basic formant compensation (controlled by current cents)
 - Optional mild amplitude modulation with the vibrato
 
-## Diagram
-```mermaid
-flowchart TD
-    A[Mic] --> B[live_input]
-    B --> C[onset detector]
-    B --> D[pitch_control]
-    C --> E[inflection swoop]
-    E --> F[total cents]
-    D --> F
-    F --> G[window_length]
-    G --> H[delay_line]
-    H --> I[high_shelf]
-    I --> J[output]
-    J --> K[Headphones]
-```
 
 ## Structure
 Below the panel, out of view, each stage is a subpatch: `live_input`, `window_length`, `delay_line`, `delay_tap_1`, `delay_tap_2`, `high_shelf`, `output` and others. The audio path runs along the top row. Control values travel by name (prefix `vfb-`). Audio stays on wires.
