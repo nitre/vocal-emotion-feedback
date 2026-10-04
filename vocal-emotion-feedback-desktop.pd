@@ -265,7 +265,7 @@ FEAR to a stored pair;
 #X obj 20 298 outlet~;
 #X text 82 298 mic_signal;
 #X text 20 10 LIVE INPUT: mic then 80 Hz high-pass then
-noise gate then USE_MIC and MIC_GAIN. Also the level meters;
+noise gate then USE_MIC and MIC_GAIN;
 #X connect 0 0 4 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;

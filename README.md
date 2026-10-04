@@ -11,11 +11,11 @@ Live sad / happy / afraid voice effect for plugdata (iOS). Based on Rachman et a
 ![desktop panel](panel-desktop.png)
 
 ## Use
-1. Put `vocal-emotion-feedback.pd` in plugdata's folder and open it. Open one copy at a time.
+1. Put `vocal-emotion-feedback.pd` in plugdata's folder and open it.
 2. DSP on, run mode.
 3. Tick USE_MIC.
 
-Requires: `sigmund~` `expr` `expr~` `fexpr~` `samphold~` `rzero~` `vline~`. The plugdata file also needs ELSE `knob` (bundled with plugdata, ELSE 1.0-0 RC9 or newer). If `sigmund~` is missing, turn SMOOTH off.
+Requires these objects (all vanilla Pd): `sigmund~` `expr` `expr~` `fexpr~` `samphold~` `rzero~` `vline~` `delread4~` `biquad~`. The plugdata file also needs ELSE `knob` (bundled with plugdata, ELSE 1.0-0 RC9 or newer). If `sigmund~` is missing, turn SMOOTH off.
 
 ## Structure
 Below the panel, out of view, each stage is a subpatch: `live_input`, `window_length`, `delay_line`, `delay_tap_1`, `delay_tap_2`, `high_shelf`, `output` and others. The audio path runs along the top row. Control values travel by name (prefix `vfb-`). Audio stays on wires.
