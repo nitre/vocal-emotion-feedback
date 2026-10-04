@@ -1,4 +1,4 @@
-# vocal-emotion-feedback
+# Vocal emotion feedback
 
 Live sad / happy / afraid voice effect for plugdata (iOS) and desktop Pure Data. Based on Rachman et al. 2018 (DAVID) and Aucouturier et al. 2016. Independent re-implementation, not endorsed by the authors. Live effect. Requires wired headphones, preferably closed-back or noise-cancelling.
 
