@@ -52,7 +52,16 @@ The high band is approximated by a 5th-order Butterworth shelf.
 Only the shifter delay line adds delay. plugdata's audio buffers are additional.
 
 ## Console
-Printed once a second: `mic_in_dB`, `src_dB`, `out_dB` (100 = full scale), `f0_Hz`, `window_ms`.
+Printed once a second:
+| Line | Meaning |
+|---|---|
+| `mic_in_dB`, `src_dB`, `out_dB` | raw mic, after USE_MIC and MIC GAIN, final output (100 = full scale) |
+| `f0_Hz` | tracked pitch, 0 = none |
+| `window_ms` | shifter window |
+| `shift_cents` | total pitch shift being applied (preset level plus vibrato and inflection) |
+| `delay_ms` | shifter delay: window / 2 + 1.6 ms, plugdata's buffers not included |
+
+Tap a preset and read `shift_cents` and `delay_ms` to check the numbers in the tables above.
 
 ## Tested
 Desktop Pd 0.54.1, on a test build with plain sliders and toggles and a file standing in for the mic (the DSP is the same as in the shipped files, the controls are not). The desktop file loads with no errors. (test tones: pitch, shelf gain, inflection, latency, gate, limiter, presets). Live on iPad with a USB headset.
