@@ -39,6 +39,58 @@ Requires these objects (all vanilla Pd): `sigmund~` `expr` `expr~` `fexpr~` `sam
 - Dynamic opposing shelf for basic formant compensation (controlled by current cents)
 - Optional mild amplitude modulation with the vibrato
 
+## Diagram
+Mic
+ │
+ ▼
+┌──────────────────────────┐
+│       live_input         │
+│ high-pass 80 Hz → gate   │
+│ → USE_MIC + MIC_GAIN     │
+└────────────┬─────────────┘
+             │ mic_signal
+       ┌─────┴─────┐
+       │           │
+       ▼           ▼
+┌──────────┐  ┌────────────────┐
+│  onset   │  │ pitch_control  │
+│ detector │  │ emotion→cents  │
+└────┬─────┘  │ + glide        │
+     │        │ + vibrato      │
+     ▼        └───────┬────────┘
+┌──────────┐          │
+│inflection│          │
+│  swoop   │          │
+└────┬─────┘          │
+     │                │
+     └───────┬────────┘
+             │ total cents
+             ▼
+      ┌──────────────┐
+      │window_length │
+      │SMOOTH/fixed  │
+      └──────┬───────┘
+             │
+             ▼
+      ┌──────────────┐
+      │  delay_line  │
+      │pitch shifter │
+      └──────┬───────┘
+             │
+             ▼
+      ┌──────────────┐
+      │  high_shelf  │
+      └──────┬───────┘
+             │
+             ▼
+      ┌──────────────┐
+      │    output    │
+      │  VOL + clip  │
+      └──────┬───────┘
+             │
+             ▼
+          Headphones
+
 ## Structure
 Below the panel, out of view, each stage is a subpatch: `live_input`, `window_length`, `delay_line`, `delay_tap_1`, `delay_tap_2`, `high_shelf`, `output` and others. The audio path runs along the top row. Control values travel by name (prefix `vfb-`). Audio stays on wires.
 
