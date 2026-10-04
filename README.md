@@ -18,6 +18,25 @@ Live sad / happy / afraid voice effect for plugdata (iOS). Based on Rachman et a
 
 Requires these objects (all vanilla Pd): `sigmund~` `expr` `expr~` `fexpr~` `samphold~` `rzero~` `vline~` `delread4~` `biquad~`. The plugdata file also needs ELSE `knob` (bundled with plugdata, ELSE 1.0-0 RC9 or newer). If `sigmund~` is missing, turn SMOOTH off.
 
+##Todo
+First
+•  Voicing-aware window freeze (freeze last good window on low confidence / pitch=0, gentle crossfade on re-lock)
+•  Delay-time slew limiter (~1–2 oct/s max)
+•  Unique $0 prefix on all vfb- names
+•  Soft-knee expander instead of hard gate
+Then
+•  Adaptive onset detector (noise-floor threshold + hold-off)
+•  Table-driven inflection envelope (replace long breakpoint message)
+•  Continuous emotion→cents curves + global Intensity control
+•  Fix long-glide deviation (>500 ms)
+After that
+•  Pre-emphasis shelf for pitch tracker only
+•  Restore last preset on load
+•  Extra diagnostics (voicing confidence, window length)
+•  Dynamic opposing shelf for basic formant compensation (controlled by current cents)
+•  Optional mild amplitude modulation with the vibrato
+
+
 ## Structure
 Below the panel, out of view, each stage is a subpatch: `live_input`, `window_length`, `delay_line`, `delay_tap_1`, `delay_tap_2`, `high_shelf`, `output` and others. The audio path runs along the top row. Control values travel by name (prefix `vfb-`). Audio stays on wires.
 
