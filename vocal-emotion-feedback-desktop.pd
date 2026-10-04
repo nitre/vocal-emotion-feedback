@@ -11,94 +11,89 @@ emotion-voice 0;
 #F3F5F8 #404040 0;
 #X obj 322 0 cnv 10 294 370 empty empty empty 20 12 0 14
 #F3F5F8 #404040 0;
-#X obj 16 38 hsl 80 16 0 200 0 1 \$0-emotion \$0-set_emotion
+#X obj 16 38 hsl 80 16 0 200 0 1 vfb-emotion vfb-set_emotion
 empty -2 -9 0 10 #E6EBF0 #2A8C99 #3B4754 4000 1;
 #X text 16 84 😭;
 #X text 78 84 😃;
 #X text 26 102 EMOTION;
-#X obj 134 26 hsl 56 16 0 100 0 1 \$0-fear \$0-set_fear
+#X obj 134 26 hsl 56 16 0 100 0 1 vfb-fear vfb-set_fear
 empty -2 -9 0 10 #E6EBF0 #2A8C99 #3B4754 0 1;
 #X text 132 78 😱 FEAR;
-#X obj 532 10 vsl 22 80 0 100 0 1 \$0-volume \$0-set_volume
-empty 0 -9 0 10 #E6EBF0 #2A8C99 #3B4754 3975 1;
+#X obj 532 10 vsl 22 80 0 100 0 1 empty vfb-set_volume empty
+0 -9 0 10 #E6EBF0 #2A8C99 #3B4754 3975 1;
 #X text 528 94 VOL;
-#X obj 142 130 hsl 40 16 0 100 0 1 \$0-inflect_amount
-\$0-set_inflect_amount empty -2 -9 0 10 #E6EBF0 #2A8C99
+#X obj 142 130 hsl 40 16 0 100 0 1 vfb-inflect_amount
+vfb-set_inflect_amount empty -2 -9 0 10 #E6EBF0 #2A8C99
 #3B4754 0 1;
 #X text 132 174 INFLECT;
-#X obj 234 26 hsl 56 16 0 100 0 1 \$0-mic_gain
-\$0-set_mic_gain empty -2 -9 0 10 #E6EBF0 #2A8C99 #3B4754
+#X obj 234 26 hsl 56 16 0 100 0 1 vfb-mic_gain
+vfb-set_mic_gain empty -2 -9 0 10 #E6EBF0 #2A8C99 #3B4754
 1400 1;
 #X text 228 78 MIC GAIN;
-#X obj 10 341 hsl 30 16 0 100 0 1 \$0-noise_gate_knob empty
+#X obj 10 341 hsl 30 16 0 100 0 1 vfb-noise_gate_knob empty
 empty -2 -9 0 10 #E6EBF0 #2A8C99 #3B4754 0 1;
 #X text 48 346 GATE 0=off;
-#X obj 26 124 hradio 15 1 0 4 \$0-glide_step empty empty 0
+#X obj 26 124 hradio 15 1 0 4 vfb-glide_step empty empty 0
 -8 0 10 #E6EBF0 #2A8C99 #3B4754 0;
-#X obj 26 148 nbx 5 18 0 2000 0 0 \$0-glide_ms
-\$0-set_glide_ms empty 0 -8 0 10 #E6EBF0 #3B4754 #3B4754 0
+#X obj 26 148 nbx 5 18 0 2000 0 0 vfb-glide_ms
+vfb-set_glide_ms empty 0 -8 0 10 #E6EBF0 #3B4754 #3B4754 0
 256;
 #X text 22 166 GLIDE ms;
-#X obj 10 206 bng 32 250 50 0 \$0-btn_h0 empty 😊_low 38 16 0
+#X obj 10 206 bng 32 250 50 0 vfb-btn_h0 empty 😊_low 38 16 0
 11 #E6EBF0 #D9A91F #3B4754;
-#X obj 110 206 bng 32 250 50 0 \$0-btn_h1 empty 😊_mid 38 16
+#X obj 110 206 bng 32 250 50 0 vfb-btn_h1 empty 😊_mid 38 16
 0 11 #E6EBF0 #D9A91F #3B4754;
-#X obj 210 206 bng 32 250 50 0 \$0-btn_h2 empty 😊_high 38 16
+#X obj 210 206 bng 32 250 50 0 vfb-btn_h2 empty 😊_high 38 16
 0 11 #E6EBF0 #D9A91F #3B4754;
-#X obj 10 248 bng 32 250 50 0 \$0-btn_s0 empty 😢_low 38 16 0
+#X obj 10 248 bng 32 250 50 0 vfb-btn_s0 empty 😢_low 38 16 0
 11 #E6EBF0 #4F83CC #3B4754;
-#X obj 110 248 bng 32 250 50 0 \$0-btn_s1 empty 😢_mid 38 16
+#X obj 110 248 bng 32 250 50 0 vfb-btn_s1 empty 😢_mid 38 16
 0 11 #E6EBF0 #4F83CC #3B4754;
-#X obj 210 248 bng 32 250 50 0 \$0-btn_s2 empty 😢_high 38 16
+#X obj 210 248 bng 32 250 50 0 vfb-btn_s2 empty 😢_high 38 16
 0 11 #E6EBF0 #4F83CC #3B4754;
-#X obj 10 290 bng 32 250 50 0 \$0-btn_a0 empty 😱_low 38 16 0
+#X obj 10 290 bng 32 250 50 0 vfb-btn_a0 empty 😱_low 38 16 0
 11 #E6EBF0 #8A5FBF #3B4754;
-#X obj 110 290 bng 32 250 50 0 \$0-btn_a1 empty 😱_mid 38 16
+#X obj 110 290 bng 32 250 50 0 vfb-btn_a1 empty 😱_mid 38 16
 0 11 #E6EBF0 #8A5FBF #3B4754;
-#X obj 210 290 bng 32 250 50 0 \$0-btn_a2 empty 😱_high 38 16
+#X obj 210 290 bng 32 250 50 0 vfb-btn_a2 empty 😱_high 38 16
 0 11 #E6EBF0 #8A5FBF #3B4754;
-#X obj 330 112 hradio 16 1 0 2 \$0-use_mic empty USE_MIC 38
+#X obj 330 112 hradio 16 1 0 2 vfb-use_mic empty USE_MIC 38
 8 0 11 #E6EBF0 #2A8C99 #3B4754 0;
-#X obj 330 138 hradio 16 1 0 2 \$0-smooth \$0-set_smooth
+#X obj 330 138 hradio 16 1 0 2 vfb-smooth vfb-set_smooth
 SMOOTH 38 8 0 11 #E6EBF0 #2A8C99 #3B4754 0;
-#X obj 330 164 bng 16 250 50 0 \$0-btn_n empty NEUTRAL_reset
+#X obj 330 164 bng 16 250 50 0 vfb-btn_n empty NEUTRAL_reset
 22 8 0 11 #E6EBF0 #2A8C99 #3B4754;
-#X obj 330 190 hradio 16 1 0 2 \$0-more_switch empty MORE 38
+#X obj 330 190 hradio 16 1 0 2 vfb-more_switch empty MORE 38
 8 0 11 #E6EBF0 #2A8C99 #3B4754 0;
-#X obj 330 520 hradio 16 1 0 2 \$0-record_switch empty
+#X obj 330 520 hradio 16 1 0 2 vfb-record_switch empty
 RECORD_(may_fail) 38 8 0 11 #E6EBF0 #2A8C99 #3B4754 0;
-#X obj 330 542 hradio 16 1 0 2 \$0-second_order_shelf_switch
+#X obj 330 542 hradio 16 1 0 2 vfb-second_order_shelf_switch
 empty SHELF_2nd-order 38 8 0 11 #E6EBF0 #2A8C99 #3B4754 0;
-#X obj 330 564 hradio 16 1 0 2 \$0-female_switch empty
+#X obj 330 564 hradio 16 1 0 2 vfb-female_switch empty
 FEMALE_VOICE 38 8 0 11 #E6EBF0 #2A8C99 #3B4754 0;
-#X obj 330 586 hradio 16 1 0 2 \$0-smaller_pitch_switch
+#X obj 330 586 hradio 16 1 0 2 vfb-smaller_pitch_switch
 empty SMALLER_PITCH 38 8 0 11 #E6EBF0 #2A8C99 #3B4754 0;
-#X obj 330 608 hradio 16 1 0 2 \$0-paper_levels_switch
-\$0-set_paper_levels_switch PAPER_LEVELS 38 8 0 11 #E6EBF0
+#X obj 330 608 hradio 16 1 0 2 vfb-paper_levels_switch
+vfb-set_paper_levels_switch PAPER_LEVELS 38 8 0 11 #E6EBF0
 #2A8C99 #3B4754 0;
-#X obj 330 630 hradio 16 1 0 2 \$0-afraid_swoop_short_switch
+#X obj 330 630 hradio 16 1 0 2 vfb-afraid_swoop_short_switch
 empty AFRAID_SWOOP_150ms 38 8 0 11 #E6EBF0 #2A8C99 #3B4754
 0;
-#X obj 330 652 hradio 16 1 0 2 \$0-afraid_swoop_size_switch
+#X obj 330 652 hradio 16 1 0 2 vfb-afraid_swoop_size_switch
 empty AFRAID_SWOOP_SIZE 38 8 0 11 #E6EBF0 #2A8C99 #3B4754 0;
 #X text 330 354 Tap controls in run mode.;
-#X obj 566 10 vu 14 80 \$0-set_vu_in_meter empty -1 -8 0 10
-#C3CCD5 #3B4754 0 0;
-#X obj 590 10 vu 14 80 \$0-set_vu_out_meter empty -1 -8 0 10
-#C3CCD5 #3B4754 0 0;
-#X text 562 94 IN OUT;
-#N canvas 0 0 822 226 glide_steps 0;
-#X obj 171 74 expr if(\$f1<1 \, 0 \, if(\$f1<2 \, 150 \,
+#N canvas 0 0 836 226 glide_steps 0;
+#X obj 178 74 expr if(\$f1<1 \, 0 \, if(\$f1<2 \, 150 \,
 if(\$f1<3 \, 500 \, 2000)));
-#X obj 20 74 r \$0-glide_step;
-#X obj 637 74 s \$0-set_glide_ms;
+#X obj 20 74 r vfb-glide_step;
+#X obj 644 74 s vfb-set_glide_ms;
 #X text 20 10 PANEL: the controls live in the top-left
 window. Their values are sent by name and picked up by [r]
 objects below;
 #X connect 1 0 0 0;
 #X connect 0 0 2 0;
 #X restore 480 1280 pd glide_steps;
-#N canvas 0 0 753 498 startup 0;
+#N canvas 0 0 767 498 startup 0;
 #X obj 20 74 loadbang;
 #X obj 122 74 t b b b;
 #X obj 217 74 t b b b b b;
@@ -109,19 +104,19 @@ objects below;
 #X msg 340 234 \; pd dsp 1;
 #X msg 340 138 25;
 #X msg 340 170 0;
-#X obj 491 234 print startup_ran;
+#X obj 498 234 print startup_ran;
 #X msg 340 266 1;
 #X msg 340 298 1;
 #X msg 340 202 1;
 #X msg 340 330 1;
-#X obj 491 202 s \$0-set_smooth;
-#X obj 491 298 s \$0-set_paper_levels_switch;
-#X obj 491 74 s \$0-set_emotion;
-#X obj 491 106 s \$0-set_volume;
-#X obj 491 138 s \$0-set_mic_gain;
-#X obj 491 170 s \$0-set_inflect_amount;
-#X obj 491 266 s \$0-run_tick;
-#X obj 340 362 s \$0-samplerate;
+#X obj 498 202 s vfb-set_smooth;
+#X obj 498 298 s vfb-set_paper_levels_switch;
+#X obj 498 74 s vfb-set_emotion;
+#X obj 498 106 s vfb-set_volume;
+#X obj 498 138 s vfb-set_mic_gain;
+#X obj 498 170 s vfb-set_inflect_amount;
+#X obj 498 266 s vfb-run_tick;
+#X obj 340 362 s vfb-samplerate;
 #X text 20 10 STARTUP: runs once at load. Sets the default
 knob values and turns DSP on;
 #X connect 0 0 1 0;
@@ -148,56 +143,56 @@ knob values and turns DSP on;
 #X connect 4 0 22 0;
 #X restore 20 1280 pd startup;
 #N canvas 0 0 480 818 presets 0;
-#X msg 143 74 100;
-#X msg 143 106 0;
-#X msg 143 138 159;
-#X msg 143 170 0;
-#X msg 143 202 182;
-#X msg 143 234 0;
-#X msg 143 266 200;
-#X msg 143 298 0;
-#X msg 143 330 43;
-#X msg 143 362 0;
-#X msg 143 394 20;
-#X msg 143 426 0;
-#X msg 143 458 0;
-#X msg 143 490 0;
-#X msg 143 522 100;
-#X msg 143 554 65;
-#X msg 143 586 100;
-#X msg 143 618 85;
-#X msg 143 650 100;
-#X msg 143 682 100;
-#X obj 20 74 r \$0-btn_n;
-#X obj 210 74 s \$0-set_emotion;
-#X obj 210 106 s \$0-set_fear;
-#X obj 20 106 r \$0-btn_h0;
-#X obj 210 138 s \$0-set_emotion;
-#X obj 210 170 s \$0-set_fear;
-#X obj 20 138 r \$0-btn_h1;
-#X obj 210 202 s \$0-set_emotion;
-#X obj 210 234 s \$0-set_fear;
-#X obj 20 170 r \$0-btn_h2;
-#X obj 210 266 s \$0-set_emotion;
-#X obj 210 298 s \$0-set_fear;
-#X obj 20 202 r \$0-btn_s0;
-#X obj 210 330 s \$0-set_emotion;
-#X obj 210 362 s \$0-set_fear;
-#X obj 20 234 r \$0-btn_s1;
-#X obj 210 394 s \$0-set_emotion;
-#X obj 210 426 s \$0-set_fear;
-#X obj 20 266 r \$0-btn_s2;
-#X obj 210 458 s \$0-set_emotion;
-#X obj 210 490 s \$0-set_fear;
-#X obj 20 298 r \$0-btn_a0;
-#X obj 210 522 s \$0-set_emotion;
-#X obj 210 554 s \$0-set_fear;
-#X obj 20 330 r \$0-btn_a1;
-#X obj 210 586 s \$0-set_emotion;
-#X obj 210 618 s \$0-set_fear;
-#X obj 20 362 r \$0-btn_a2;
-#X obj 210 650 s \$0-set_emotion;
-#X obj 210 682 s \$0-set_fear;
+#X msg 150 74 100;
+#X msg 150 106 0;
+#X msg 150 138 159;
+#X msg 150 170 0;
+#X msg 150 202 182;
+#X msg 150 234 0;
+#X msg 150 266 200;
+#X msg 150 298 0;
+#X msg 150 330 43;
+#X msg 150 362 0;
+#X msg 150 394 20;
+#X msg 150 426 0;
+#X msg 150 458 0;
+#X msg 150 490 0;
+#X msg 150 522 100;
+#X msg 150 554 65;
+#X msg 150 586 100;
+#X msg 150 618 85;
+#X msg 150 650 100;
+#X msg 150 682 100;
+#X obj 20 74 r vfb-btn_n;
+#X obj 217 74 s vfb-set_emotion;
+#X obj 217 106 s vfb-set_fear;
+#X obj 20 106 r vfb-btn_h0;
+#X obj 217 138 s vfb-set_emotion;
+#X obj 217 170 s vfb-set_fear;
+#X obj 20 138 r vfb-btn_h1;
+#X obj 217 202 s vfb-set_emotion;
+#X obj 217 234 s vfb-set_fear;
+#X obj 20 170 r vfb-btn_h2;
+#X obj 217 266 s vfb-set_emotion;
+#X obj 217 298 s vfb-set_fear;
+#X obj 20 202 r vfb-btn_s0;
+#X obj 217 330 s vfb-set_emotion;
+#X obj 217 362 s vfb-set_fear;
+#X obj 20 234 r vfb-btn_s1;
+#X obj 217 394 s vfb-set_emotion;
+#X obj 217 426 s vfb-set_fear;
+#X obj 20 266 r vfb-btn_s2;
+#X obj 217 458 s vfb-set_emotion;
+#X obj 217 490 s vfb-set_fear;
+#X obj 20 298 r vfb-btn_a0;
+#X obj 217 522 s vfb-set_emotion;
+#X obj 217 554 s vfb-set_fear;
+#X obj 20 330 r vfb-btn_a1;
+#X obj 217 586 s vfb-set_emotion;
+#X obj 217 618 s vfb-set_fear;
+#X obj 20 362 r vfb-btn_a2;
+#X obj 217 650 s vfb-set_emotion;
+#X obj 217 682 s vfb-set_fear;
 #X text 20 10 PRESET BUTTONS: each button sets EMOTION and
 FEAR to a stored pair;
 #X connect 20 0 0 0;
@@ -241,33 +236,32 @@ FEAR to a stored pair;
 #X connect 18 0 48 0;
 #X connect 19 0 49 0;
 #X restore 250 1280 pd presets;
-#N canvas 0 0 2202 338 live_input 0;
+#N canvas 0 0 2083 338 live_input 0;
 #X obj 20 74 adc~ 1;
-#X obj 1451 74 *~ 0;
-#X obj 1525 74 *~ 1;
-#X obj 206 202 / 25;
-#X obj 206 74 hip~ 80;
-#X obj 595 74 abs~;
-#X obj 760 74 fexpr~ max(\$x1[0] \, \$y1[-1]*0.9887);
-#X obj 1051 74 fexpr~ max(\$x1[0] > \$f2 \,
+#X obj 1465 74 *~ 0;
+#X obj 1539 74 *~ 1;
+#X obj 213 202 / 25;
+#X obj 213 74 hip~ 80;
+#X obj 602 74 abs~;
+#X obj 774 74 fexpr~ max(\$x1[0] \, \$y1[-1]*0.9887);
+#X obj 1065 74 fexpr~ max(\$x1[0] > \$f2 \,
 \$y1[-1]*0.99955);
-#X obj 1391 74 *~;
-#X obj 206 138 expr if(\$f1 > 0 \, pow(10 \,
+#X obj 1405 74 *~;
+#X obj 213 138 expr if(\$f1 > 0 \, pow(10 \,
 (-70+0.5*\$f1)/20) \, 0);
-#X obj 206 106 env~ 8192 8192;
-#X obj 595 106 f;
-#X obj 206 170 metro 1000;
-#X obj 760 106 print mic_in_dB;
-#X obj 1673 74 env~ 8192 8192;
-#X obj 1817 106 f;
-#X obj 2003 74 print after_gain_dB;
-#X obj 1599 74 *~ 1;
-#X obj 20 106 r \$0-noise_gate_knob;
-#X obj 20 138 r \$0-run_tick;
-#X obj 20 170 r \$0-use_mic;
-#X obj 20 202 r \$0-mic_gain;
-#X obj 595 138 s \$0-console_tick;
-#X obj 1817 74 s \$0-set_vu_in_meter;
+#X obj 213 106 env~ 8192 8192;
+#X obj 602 106 f;
+#X obj 213 170 metro 1000;
+#X obj 774 106 print mic_in_dB;
+#X obj 1687 74 env~ 8192 8192;
+#X obj 1831 74 f;
+#X obj 1884 74 print after_gain_dB;
+#X obj 1613 74 *~ 1;
+#X obj 20 106 r vfb-noise_gate_knob;
+#X obj 20 138 r vfb-run_tick;
+#X obj 20 170 r vfb-use_mic;
+#X obj 20 202 r vfb-mic_gain;
+#X obj 602 138 s vfb-console_tick;
 #X obj 20 298 outlet~;
 #X text 82 298 mic_signal;
 #X text 20 10 LIVE INPUT: mic then 80 Hz high-pass then
@@ -287,7 +281,7 @@ noise gate then USE_MIC and MIC_GAIN. Also the level meters;
 #X connect 1 0 2 0;
 #X connect 3 0 2 1;
 #X connect 2 0 17 0;
-#X connect 17 0 24 0;
+#X connect 17 0 23 0;
 #X connect 17 0 14 0;
 #X connect 14 0 15 1;
 #X connect 12 0 15 0;
@@ -297,42 +291,41 @@ noise gate then USE_MIC and MIC_GAIN. Also the level meters;
 #X connect 20 0 1 1;
 #X connect 21 0 3 0;
 #X connect 12 0 22 0;
-#X connect 14 0 23 0;
 #X restore 20 1100 pd live_input;
-#N canvas 0 0 2013 434 pitch_control 0;
-#X obj 304 74 - 100;
-#X obj 770 74 / 100;
-#X obj 886 138 expr if(\$f1 > 0 \, if(\$f2 > 0 \, 30 \,
+#N canvas 0 0 2020 434 pitch_control 0;
+#X obj 311 74 - 100;
+#X obj 777 74 / 100;
+#X obj 893 138 expr if(\$f1 > 0 \, if(\$f2 > 0 \, 30 \,
 50)*\$f1 \, if(\$f2 > 0 \, 50 \, 70)*\$f1);
-#X obj 1352 106 pack 0 0;
-#X obj 1454 106 vline~;
-#X obj 1542 106 lop~ 20;
-#X obj 304 138 expr if(\$f2 > 0 \, if(\$f1/100 < 0.65 \,
+#X obj 1359 106 pack 0 0;
+#X obj 1461 106 vline~;
+#X obj 1549 106 lop~ 20;
+#X obj 311 138 expr if(\$f2 > 0 \, if(\$f1/100 < 0.65 \,
 0+(13.7-0)*(\$f1/100-0)/(0.65-0) \, if(\$f1/100 < 0.85 \,
 13.7+(20.2-13.7)*(\$f1/100-0.65)/(0.85-0.65) \, if(\$f1/100
 < 1 \, 20.2+(33.0-20.2)*(\$f1/100-0.85)/(1-0.85) \, 33.0)))
 \, 0.4*\$f1);
-#X obj 770 138 sig~;
-#X obj 1799 74 osc~;
-#X obj 1873 74 *~;
-#X obj 304 106 metro 120;
-#X obj 770 106 random 201;
-#X obj 886 106 - 100;
-#X obj 1352 74 / 333;
-#X obj 1454 74 sig~;
-#X obj 1542 74 lop~ 8;
-#X obj 1637 74 +~ 1;
-#X obj 1711 74 *~ 8.5;
-#X obj 1933 74 +~;
-#X obj 20 74 r \$0-emotion;
-#X obj 20 106 r \$0-glide_ms;
-#X obj 20 138 r \$0-fear;
-#X obj 20 170 r \$0-run_tick;
-#X obj 886 74 s \$0-emotion_signed;
-#X obj 20 202 r \$0-emotion_last;
-#X obj 20 234 r \$0-fear_last;
-#X obj 20 266 r \$0-resend_smaller_pitch_switch_1;
-#X obj 20 298 r \$0-resend_female_switch_1;
+#X obj 777 138 sig~;
+#X obj 1806 74 osc~;
+#X obj 1880 74 *~;
+#X obj 311 106 metro 120;
+#X obj 777 106 random 201;
+#X obj 893 106 - 100;
+#X obj 1359 74 / 333;
+#X obj 1461 74 sig~;
+#X obj 1549 74 lop~ 8;
+#X obj 1644 74 +~ 1;
+#X obj 1718 74 *~ 8.5;
+#X obj 1940 74 +~;
+#X obj 20 74 r vfb-emotion;
+#X obj 20 106 r vfb-glide_ms;
+#X obj 20 138 r vfb-fear;
+#X obj 20 170 r vfb-run_tick;
+#X obj 893 74 s vfb-emotion_signed;
+#X obj 20 202 r vfb-emotion_last;
+#X obj 20 234 r vfb-fear_last;
+#X obj 20 266 r vfb-resend_smaller_pitch_switch_1;
+#X obj 20 298 r vfb-resend_female_switch_1;
 #X obj 20 394 outlet~;
 #X text 82 394 cents_level_vibrato;
 #X text 20 10 PITCH CONTROL: EMOTION becomes a pitch shift
@@ -366,27 +359,27 @@ in cents. Glide and vibrato are added here;
 #X connect 26 0 2 1;
 #X connect 27 0 6 1;
 #X restore 20 1190 pd pitch_control;
-#N canvas 0 0 1724 274 onset_detector 0;
+#N canvas 0 0 1738 274 onset_detector 0;
 #X obj 20 74 abs~;
-#X obj 157 74 fexpr~ max(\$x1[0] \, \$y1[-1]*0.99887);
-#X obj 157 106 metro 2;
-#X obj 455 74 snapshot~;
-#X obj 564 74 expr \$f1 > 0.08;
-#X obj 715 74 change;
-#X obj 803 74 sel 1;
-#X obj 1222 74 t b b;
-#X obj 1465 74 spigot;
-#X msg 1303 74 0;
-#X obj 1303 106 delay 500;
-#X msg 1412 74 1;
-#X obj 1120 74 spigot 1;
-#X obj 884 74 t b;
-#X obj 958 74 delay 300;
-#X msg 1067 74 1;
-#X msg 1303 138 0;
-#X msg 884 106 stop;
-#X obj 20 106 r \$0-run_tick;
-#X obj 1553 74 s \$0-onset_gate;
+#X obj 164 74 fexpr~ max(\$x1[0] \, \$y1[-1]*0.99887);
+#X obj 164 106 metro 2;
+#X obj 462 74 snapshot~;
+#X obj 571 74 expr \$f1 > 0.08;
+#X obj 722 74 change;
+#X obj 810 74 sel 1;
+#X obj 1229 74 t b b;
+#X obj 1472 74 spigot;
+#X msg 1310 74 0;
+#X obj 1310 106 delay 500;
+#X msg 1419 74 1;
+#X obj 1127 74 spigot 1;
+#X obj 891 74 t b;
+#X obj 965 74 delay 300;
+#X msg 1074 74 1;
+#X msg 1310 138 0;
+#X msg 891 106 stop;
+#X obj 20 106 r vfb-run_tick;
+#X obj 1560 74 s vfb-onset_gate;
 #X obj 20 34 inlet~;
 #X text 76 34 mic_signal;
 #X text 20 10 ONSET DETECTOR: spots the start of a phrase so
@@ -418,7 +411,7 @@ the inflection swoop can fire;
 #X connect 18 0 8 1;
 #X connect 8 0 19 0;
 #X restore 710 1190 pd onset_detector;
-#N canvas 0 0 1262 562 inflection 0;
+#N canvas 0 0 1269 562 inflection 0;
 #N canvas 0 0 450 300 infl 0;
 #X obj 10 10 inlet;
 #X msg 10
@@ -479,7 +472,7 @@ outlet;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X restore
-332 74 pd infl;
+339 74 pd infl;
 #N canvas 0 0 450 300 infl2 0;
 #X obj 10 10 inlet;
 #X msg 10
@@ -541,7 +534,7 @@ outlet;
 #X
 connect 0 0 1 0;
 #X connect 1 0 2 0;
-#X restore 798 234 pd
+#X restore 805 234 pd
 infl2;
 #N canvas 0 0 450 300 infl2s 0;
 #X obj 10 10 inlet;
@@ -566,21 +559,21 @@ infl2;
 #X connect 0 0 1
 0;
 #X connect 1 0 2 0;
-#X restore 798 170 pd infl2s;
-#X obj 798 74 vline~;
-#X obj 907 138 vline~;
-#X obj 332 410 spigot;
-#X obj 332 234 spigot;
-#X obj 332 138 expr if(\$f2 > 0 \, if(max(\$f1 \, 0) < 0.59
+#X restore 805 170 pd infl2s;
+#X obj 805 74 vline~;
+#X obj 914 138 vline~;
+#X obj 339 410 spigot;
+#X obj 339 234 spigot;
+#X obj 339 138 expr if(\$f2 > 0 \, if(max(\$f1 \, 0) < 0.59
 \, 0+(0.724-0)*(max(\$f1 \, 0)-0)/(0.59-0) \, if(max(\$f1 \,
 0) < 0.82 \, 0.724+(0.795-0.724)*(max(\$f1 \,
 0)-0.59)/(0.82-0.59) \, if(max(\$f1 \, 0) < 1 \,
 0.795+(1-0.795)*(max(\$f1 \, 0)-0.82)/(1-0.82) \, 1))) \,
 max(\$f1 \, 0));
-#X obj 798 138 sig~;
-#X obj 907 106 lop~ 20;
-#X obj 1002 74 *~;
-#X obj 332 266 expr if(\$f3 > 0 \, if(\$f1/100 < 0.65 \,
+#X obj 805 138 sig~;
+#X obj 914 106 lop~ 20;
+#X obj 1009 74 *~;
+#X obj 339 266 expr if(\$f3 > 0 \, if(\$f1/100 < 0.65 \,
 0+(0.251-0)*(\$f1/100-0)/(0.65-0) \, if(\$f1/100 < 0.85 \,
 0.251+(0.5055-0.251)*(\$f1/100-0.65)/(0.85-0.65) \,
 if(\$f1/100 < 1 \,
@@ -591,28 +584,28 @@ if(\$f1/100 < 1 \,
 if(\$f1/100 < 1 \,
 0.705+(0.846-0.705)*(\$f1/100-0.85)/(1-0.85) \, 0.846))) \,
 \$f1/100));
-#X obj 798 202 sig~;
-#X obj 907 170 lop~ 20;
-#X obj 1002 106 *~;
-#X obj 1122 74 +~;
-#X obj 1182 74 +~;
-#X obj 332 106 / 100;
-#X obj 798 106 sig~;
-#X obj 907 74 lop~ 20;
-#X obj 1062 74 *~;
-#X obj 1062 106 *~;
-#X obj 20 74 r \$0-onset_gate;
-#X obj 20 106 r \$0-emotion_signed;
-#X obj 20 138 r \$0-fear;
-#X obj 20 170 r \$0-inflect_amount;
-#X obj 20 202 r \$0-emotion_last;
-#X obj 20 234 r \$0-fear_last;
-#X obj 20 266 r \$0-resend_paper_levels_switch_1;
-#X obj 20 298 r \$0-resend_afraid_swoop_size_switch_1;
-#X obj 20 330 r \$0-resend_female_switch_1;
-#X obj 20 362 r \$0-afraid_swoop_long_enable;
-#X obj 20 394 r \$0-run_tick;
-#X obj 20 426 r \$0-afraid_swoop_short_switch;
+#X obj 805 202 sig~;
+#X obj 914 170 lop~ 20;
+#X obj 1009 106 *~;
+#X obj 1129 74 +~;
+#X obj 1189 74 +~;
+#X obj 339 106 / 100;
+#X obj 805 106 sig~;
+#X obj 914 74 lop~ 20;
+#X obj 1069 74 *~;
+#X obj 1069 106 *~;
+#X obj 20 74 r vfb-onset_gate;
+#X obj 20 106 r vfb-emotion_signed;
+#X obj 20 138 r vfb-fear;
+#X obj 20 170 r vfb-inflect_amount;
+#X obj 20 202 r vfb-emotion_last;
+#X obj 20 234 r vfb-fear_last;
+#X obj 20 266 r vfb-resend_paper_levels_switch_1;
+#X obj 20 298 r vfb-resend_afraid_swoop_size_switch_1;
+#X obj 20 330 r vfb-resend_female_switch_1;
+#X obj 20 362 r vfb-afraid_swoop_long_enable;
+#X obj 20 394 r vfb-run_tick;
+#X obj 20 426 r vfb-afraid_swoop_short_switch;
 #X obj 20 34 inlet~;
 #X text 76 34 cents_level_vibrato;
 #X obj 20 522 outlet~;
@@ -691,25 +684,25 @@ into the speed of the two delay taps;
 #X connect 6 0 13 0;
 #X connect 8 0 15 0;
 #X restore 480 1190 pd shifter_speed;
-#N canvas 0 0 1441 370 window_length 0;
+#N canvas 0 0 1455 370 window_length 0;
 #X obj 20 74 sigmund~ -npts 1024 -hop 512 pitch;
 #X obj 304 74 mtof;
 #X obj 385 74 moses 70;
-#X obj 522 74 moses 500;
-#X obj 708 74 expr 2*max(1 \, rint(0.01*\$f1))*1000/\$f1;
-#X obj 1115 74 pack f 60;
-#X obj 1224 74 line~;
-#X obj 1305 74 clip~ 5 40;
+#X obj 529 74 moses 500;
+#X obj 722 74 expr 2*max(1 \, rint(0.01*\$f1))*1000/\$f1;
+#X obj 1129 74 pack f 60;
+#X obj 1238 74 line~;
+#X obj 1319 74 clip~ 5 40;
 #X msg 385 138 20;
 #X msg 385 170 set 20;
 #X msg 385 202 10;
 #X msg 385 234 set 10;
-#X obj 1027 74 spigot;
+#X obj 1041 74 spigot;
 #X obj 304 106 sel 1;
-#X obj 20 106 r \$0-smooth;
-#X obj 522 106 s \$0-window_set_20ms;
-#X obj 522 138 s \$0-window_set_10ms;
-#X obj 385 106 s \$0-pitch_hz;
+#X obj 20 106 r vfb-smooth;
+#X obj 529 106 s vfb-window_set_20ms;
+#X obj 529 138 s vfb-window_set_10ms;
+#X obj 385 106 s vfb-pitch_hz;
 #X obj 20 34 inlet~;
 #X text 76 34 mic_signal;
 #X obj 20 330 outlet~;
@@ -739,107 +732,111 @@ window that follows the voice (SMOOTH);
 #X connect 1 0 17 0;
 #X restore 250 1100 pd window_length;
 #N canvas 0 0 480 242 delay_line 0;
-#X obj 108 74 delwrite~ \$0-delay 100;
+#X obj 108 74 delwrite~ vfb-delay 100;
 #X obj 20 74 *~ 0.9;
-#X obj 20 106 +~;
+#X obj 108 106 *~ 0;
 #X obj 20 34 inlet~;
 #X text 76 34 mic_signal;
-#X obj 170 34 inlet~;
-#X text 226 34 tap_out1;
-#X obj 320 34 inlet~;
-#X text 376 34 tap_out2;
 #X obj 20 202 outlet~;
-#X text 82 202 taps_sum;
+#X text 82 202 order_signal;
 #X text 20 10 DELAY LINE: the mic is written into the delay
 line and the two tap outputs are summed;
 #X connect 3 0 1 0;
 #X connect 1 0 0 0;
-#X connect 5 0 2 0;
-#X connect 7 0 2 1;
-#X connect 2 0 9 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
 #X restore 480 1100 pd delay_line;
-#N canvas 0 0 961 306 delay_tap_1 0;
-#X obj 452 74 samphold~;
-#X obj 20 74 rzero~ 1;
-#X obj 206 74 abs~;
-#X obj 301 74 expr~ \$v1 > 0.5;
-#X obj 561 74 *~;
-#X obj 621 74 +~ 1.6;
-#X obj 709 74 delread4~ \$0-delay;
-#X obj 20 106 cos~;
-#X obj 206 106 *~ -0.5;
-#X obj 301 106 +~ 0.5;
+#N canvas 0 0 961 338 delay_tap_1 0;
+#X obj 20 74 snapshot~;
+#X obj 459 74 samphold~;
+#X obj 20 106 rzero~ 1;
+#X obj 213 74 abs~;
+#X obj 308 74 expr~ \$v1 > 0.5;
+#X obj 568 74 *~;
+#X obj 628 74 +~ 0;
+#X obj 702 74 delread4~ vfb-delay;
+#X obj 20 138 cos~;
+#X obj 213 106 *~ -0.5;
+#X obj 308 106 +~ 0.5;
 #X obj 881 74 *~;
-#X obj 20 138 r \$0-window_set_20ms;
-#X obj 20 170 r \$0-window_set_10ms;
+#X obj 20 170 r vfb-window_set_20ms;
+#X obj 20 202 r vfb-window_set_10ms;
 #X obj 20 34 inlet~;
-#X text 76 34 window_ms;
+#X text 76 34 order_signal;
 #X obj 170 34 inlet~;
-#X text 226 34 phasor1;
-#X obj 20 266 outlet~;
-#X text 82 266 tap_out1;
+#X text 226 34 window_ms;
+#X obj 320 34 inlet~;
+#X text 376 34 phasor1;
+#X obj 20 298 outlet~;
+#X text 82 298 tap_out1;
 #X text 20 10 DELAY TAP 1: reads the delay line at a moving
 point and fades it with a Hann weight;
-#X connect 13 0 0 0;
-#X connect 15 0 1 0;
-#X connect 1 0 2 0;
+#X connect 14 0 0 0;
+#X connect 16 0 1 0;
+#X connect 18 0 2 0;
 #X connect 2 0 3 0;
-#X connect 3 0 0 1;
-#X connect 15 0 4 0;
-#X connect 0 0 4 1;
-#X connect 4 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 1;
+#X connect 18 0 5 0;
+#X connect 1 0 5 1;
 #X connect 5 0 6 0;
-#X connect 15 0 7 0;
-#X connect 7 0 8 0;
+#X connect 6 0 7 0;
+#X connect 18 0 8 0;
 #X connect 8 0 9 0;
-#X connect 6 0 10 0;
-#X connect 9 0 10 1;
-#X connect 10 0 17 0;
-#X connect 11 0 0 0;
-#X connect 12 0 0 0;
+#X connect 9 0 10 0;
+#X connect 7 0 11 0;
+#X connect 10 0 11 1;
+#X connect 11 0 20 0;
+#X connect 12 0 1 0;
+#X connect 13 0 1 0;
 #X restore 710 1100 pd delay_tap_1;
-#N canvas 0 0 961 306 delay_tap_2 0;
-#X obj 452 74 samphold~;
-#X obj 20 74 rzero~ 1;
-#X obj 206 74 abs~;
-#X obj 301 74 expr~ \$v1 > 0.5;
-#X obj 561 74 *~;
-#X obj 621 74 +~ 1.6;
-#X obj 709 74 delread4~ \$0-delay;
-#X obj 20 106 cos~;
-#X obj 206 106 *~ -0.5;
-#X obj 301 106 +~ 0.5;
+#N canvas 0 0 961 338 delay_tap_2 0;
+#X obj 20 74 snapshot~;
+#X obj 459 74 samphold~;
+#X obj 20 106 rzero~ 1;
+#X obj 213 74 abs~;
+#X obj 308 74 expr~ \$v1 > 0.5;
+#X obj 568 74 *~;
+#X obj 628 74 +~ 0;
+#X obj 702 74 delread4~ vfb-delay;
+#X obj 20 138 cos~;
+#X obj 213 106 *~ -0.5;
+#X obj 308 106 +~ 0.5;
 #X obj 881 74 *~;
-#X obj 20 138 r \$0-window_set_20ms;
-#X obj 20 170 r \$0-window_set_10ms;
+#X obj 20 170 r vfb-window_set_20ms;
+#X obj 20 202 r vfb-window_set_10ms;
 #X obj 20 34 inlet~;
-#X text 76 34 window_ms;
+#X text 76 34 order_signal;
 #X obj 170 34 inlet~;
-#X text 226 34 phasor2;
-#X obj 20 266 outlet~;
-#X text 82 266 tap_out2;
+#X text 226 34 window_ms;
+#X obj 320 34 inlet~;
+#X text 376 34 phasor2;
+#X obj 20 298 outlet~;
+#X text 82 298 tap_out2;
 #X text 20 10 DELAY TAP 2: reads the delay line at a moving
 point and fades it with a Hann weight;
-#X connect 13 0 0 0;
-#X connect 15 0 1 0;
-#X connect 1 0 2 0;
+#X connect 14 0 0 0;
+#X connect 16 0 1 0;
+#X connect 18 0 2 0;
 #X connect 2 0 3 0;
-#X connect 3 0 0 1;
-#X connect 15 0 4 0;
-#X connect 0 0 4 1;
-#X connect 4 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 1;
+#X connect 18 0 5 0;
+#X connect 1 0 5 1;
 #X connect 5 0 6 0;
-#X connect 15 0 7 0;
-#X connect 7 0 8 0;
+#X connect 6 0 7 0;
+#X connect 18 0 8 0;
 #X connect 8 0 9 0;
-#X connect 6 0 10 0;
-#X connect 9 0 10 1;
-#X connect 10 0 17 0;
-#X connect 11 0 0 0;
-#X connect 12 0 0 0;
+#X connect 9 0 10 0;
+#X connect 7 0 11 0;
+#X connect 10 0 11 1;
+#X connect 11 0 20 0;
+#X connect 12 0 1 0;
+#X connect 13 0 1 0;
 #X restore 940 1100 pd delay_tap_2;
-#N canvas 0 0 2559 434 high_shelf 0;
-#X obj 297 122 expr if(\$f2 > 0 \, if(\$f1 > 0 \, if(\$f1 <
+#N canvas 0 0 2573 466 high_shelf 0;
+#X obj 20 74 +~;
+#X obj 304 122 expr if(\$f2 > 0 \, if(\$f1 > 0 \, if(\$f1 <
 0.59 \, 0+(5.8-0)*(\$f1-0)/(0.59-0) \, if(\$f1 < 0.82 \,
 5.8+(6.6-5.8)*(\$f1-0.59)/(0.82-0.59) \, if(\$f1 < 1 \,
 6.6+(9.5-6.6)*(\$f1-0.82)/(1-0.82) \, 9.5))) \, -(if((-\$f1)
@@ -847,12 +844,12 @@ point and fades it with a Hann weight;
 \, 7.8+(9.6-7.8)*((-\$f1)-0.57)/(0.8-0.57) \, if((-\$f1) < 1
 \, 9.6+(12.0-9.6)*((-\$f1)-0.8)/(1-0.8) \, 12.0))))) \,
 if(\$f1 > 0 \, 9.5*\$f1 \, 12*\$f1));
-#X obj 763 122 * 1.14;
-#X obj 2025 74 biquad~;
-#X obj 2155 74 biquad~;
-#X obj 2250 74 biquad~;
-#X obj 1695 74 biquad~;
-#X obj 20 74 array define -k \$0-shelfc 6300;
+#X obj 770 122 * 1.14;
+#X obj 2039 74 biquad~;
+#X obj 2169 74 biquad~;
+#X obj 2264 74 biquad~;
+#X obj 1702 74 biquad~;
+#X obj 20 106 array define -k vfb-shelfc 6300;
 #A 0
 0.064064839 -0.52818119 1.4411778 0.63127667 0.78234492
 0.046366361 -0.10600764 1.4287988 0.45688091 0.18045614
@@ -1969,7 +1966,7 @@ if(\$f1 > 0 \, 9.5*\$f1 \, 12*\$f1));
 -0.6162562 0.89556375 -1.1540866 0.60109354 0.78941089
 -0.23335475 0.86519181 -0.88067606 0.27689777 0.36195231 0
 0.92578277 -0.43616954 0;
-#X obj 20 106 array define -k \$0-shelfr 1900;
+#X obj 20 138 array define -k vfb-shelfr 1900;
 #A 0
 0.98549068 -0.46082789 0.38330491 -0.036162647 0.12819495
 0.97845532 -0.45891966 0.39037645 -0.040564762 0.13065265
@@ -2349,86 +2346,91 @@ if(\$f1 > 0 \, 9.5*\$f1 \, 12*\$f1));
 -0.51876333 2.6433566 -4.0870329 1.7875834 1.1688759
 -0.51673009 2.7080418 -4.1963835 1.8361959 1.1628598
 -0.51469873 2.7742843 -4.3085284 1.886083;
-#X obj 297 74 expr if(\$f1 < 46000 \, 0 \, if(\$f1 < 68000
+#X obj 304 74 expr if(\$f1 < 46000 \, 0 \, if(\$f1 < 68000
 \, 1 \, if(\$f1 < 92000 \, 2 \, 3)));
-#X obj 1229 106 expr ((\$f2*105+max(0 \, min(104 \,
+#X obj 1236 106 expr ((\$f2*105+max(0 \, min(104 \,
 rint((\$f1-(-14.5))/0.25))))*15);
-#X obj 1695 106 array get \$0-shelfc 15;
-#X obj 1895 74 list split 5;
-#X obj 2025 106 list split 5;
-#X obj 763 74 expr ((\$f2*95+max(0 \, min(94 \,
+#X obj 1702 106 array get vfb-shelfc 15;
+#X obj 1909 74 list split 5;
+#X obj 2039 106 list split 5;
+#X obj 770 74 expr ((\$f2*95+max(0 \, min(94 \,
 rint((\$f1-(-13.0))/0.25))))*5);
-#X obj 1229 74 array get \$0-shelfr 5;
-#X obj 2405 74 *~ 1;
-#X obj 1895 138 *~ 0;
-#X obj 2479 74 +~;
-#X obj 1229 154 expr pow(10 \, \$f1/20);
-#X obj 1695 138 sig~;
-#X obj 1895 106 lop~ 20;
-#X obj 2345 74 *~;
-#X obj 20 138 r \$0-emotion_signed;
-#X obj 20 170 r \$0-samplerate;
-#X obj 20 202 r \$0-emotion_last;
-#X obj 20 234 r \$0-resend_paper_levels_switch_1;
-#X obj 20 266 r \$0-second_order_shelf_switch;
-#X obj 20 298 r \$0-cascade_enable;
+#X obj 1236 74 array get vfb-shelfr 5;
+#X obj 2419 74 *~ 1;
+#X obj 1909 138 *~ 0;
+#X obj 2493 74 +~;
+#X obj 1236 154 expr pow(10 \, \$f1/20);
+#X obj 1702 138 sig~;
+#X obj 1909 106 lop~ 20;
+#X obj 2359 74 *~;
+#X obj 20 170 r vfb-emotion_signed;
+#X obj 20 202 r vfb-samplerate;
+#X obj 20 234 r vfb-emotion_last;
+#X obj 20 266 r vfb-resend_paper_levels_switch_1;
+#X obj 20 298 r vfb-second_order_shelf_switch;
+#X obj 20 330 r vfb-cascade_enable;
 #X obj 20 34 inlet~;
-#X text 76 34 taps_sum;
-#X obj 20 394 outlet~;
-#X text 82 394 shelf_sum;
+#X text 76 34 tap_out1;
+#X obj 170 34 inlet~;
+#X text 226 34 tap_out2;
+#X obj 20 426 outlet~;
+#X text 82 426 shelf_sum;
 #X text 20 10 HIGH SHELF: the 8 kHz filter. Its coefficients
 are looked up from tables;
-#X connect 0 0 1 0;
-#X connect 28 0 2 0;
-#X connect 2 0 3 0;
+#X connect 29 0 0 0;
+#X connect 31 0 0 1;
+#X connect 1 0 2 0;
+#X connect 0 0 3 0;
 #X connect 3 0 4 0;
-#X connect 28 0 5 0;
-#X connect 1 0 9 0;
-#X connect 8 0 9 1;
-#X connect 9 0 10 0;
+#X connect 4 0 5 0;
+#X connect 0 0 6 0;
+#X connect 2 0 10 0;
+#X connect 9 0 10 1;
 #X connect 10 0 11 0;
-#X connect 11 0 2 0;
-#X connect 11 1 12 0;
+#X connect 11 0 12 0;
 #X connect 12 0 3 0;
-#X connect 12 1 4 0;
-#X connect 0 0 13 0;
-#X connect 8 0 13 1;
-#X connect 13 0 14 0;
-#X connect 14 0 5 0;
-#X connect 1 0 18 0;
-#X connect 18 0 19 0;
+#X connect 12 1 13 0;
+#X connect 13 0 4 0;
+#X connect 13 1 5 0;
+#X connect 1 0 14 0;
+#X connect 9 0 14 1;
+#X connect 14 0 15 0;
+#X connect 15 0 6 0;
+#X connect 2 0 19 0;
 #X connect 19 0 20 0;
-#X connect 4 0 21 0;
-#X connect 20 0 21 1;
-#X connect 21 0 15 0;
-#X connect 15 0 17 0;
-#X connect 5 0 16 0;
-#X connect 16 0 17 1;
-#X connect 17 0 30 0;
-#X connect 22 0 0 0;
-#X connect 23 0 8 0;
-#X connect 24 0 0 0;
-#X connect 25 0 0 1;
-#X connect 26 0 16 1;
-#X connect 27 0 15 1;
+#X connect 20 0 21 0;
+#X connect 5 0 22 0;
+#X connect 21 0 22 1;
+#X connect 22 0 16 0;
+#X connect 16 0 18 0;
+#X connect 6 0 17 0;
+#X connect 17 0 18 1;
+#X connect 18 0 33 0;
+#X connect 23 0 1 0;
+#X connect 24 0 9 0;
+#X connect 25 0 1 0;
+#X connect 26 0 1 1;
+#X connect 27 0 17 1;
+#X connect 28 0 16 1;
 #X restore 1170 1100 pd high_shelf;
-#N canvas 0 0 985 242 output 0;
-#X obj 498 74 env~ 8192 8192;
-#X obj 642 106 f;
-#X obj 835 74 print out_dB;
-#X obj 185 74 / 100;
-#X obj 266 74 *~ 0;
-#X obj 340 74 clip~ -0.95 0.95;
-#X obj 498 106 dac~ 1 2;
-#X obj 20 74 r \$0-volume;
-#X obj 20 106 r \$0-console_tick;
-#X obj 642 74 s \$0-set_vu_out_meter;
-#X obj 20 34 inlet~;
-#X text 76 34 shelf_sum;
+#N canvas 0 0 771 242 output 0;
+#X obj 424 74 env~ 8192 8192;
+#X obj 568 74 f;
+#X obj 621 74 print out_dB;
+#X obj 20 74 / 100;
+#X obj 192 74 *~ 0;
+#X obj 266 74 clip~ -0.95 0.95;
+#X obj 424 106 dac~ 1 2;
+#X obj 20 106 r vfb-console_tick;
+#X obj 20 34 inlet;
+#X text 76 34 volume;
+#X obj 170 34 inlet~;
+#X text 226 34 shelf_sum;
 #X obj 20 202 outlet~;
 #X text 82 202 output_clip;
 #X text 20 10 OUTPUT: VOLUME then limiter then the
 headphones;
+#X connect 8 0 3 0;
 #X connect 3 0 4 1;
 #X connect 10 0 4 0;
 #X connect 4 0 5 0;
@@ -2438,35 +2440,33 @@ headphones;
 #X connect 0 0 1 1;
 #X connect 1 0 2 0;
 #X connect 5 0 12 0;
-#X connect 7 0 3 0;
-#X connect 8 0 1 0;
-#X connect 0 0 9 0;
+#X connect 7 0 1 0;
 #X restore 1400 1100 pd output;
-#N canvas 0 0 889 434 option_switches 0;
-#X obj 392 106 f;
-#X obj 392 170 f;
-#X obj 276 74 t b f;
-#X obj 276 106 t b f;
-#X obj 276 138 t b f;
-#X obj 276 170 t b f;
-#X obj 276 202 expr 1-\$f1;
-#X obj 276 234 expr 1-\$f1;
-#X obj 20 74 r \$0-emotion_signed;
-#X obj 20 106 r \$0-fear;
-#X obj 704 74 s \$0-emotion_last;
-#X obj 704 106 s \$0-fear_last;
-#X obj 20 138 r \$0-paper_levels_switch;
-#X obj 392 74 s \$0-resend_paper_levels_switch_1;
-#X obj 20 170 r \$0-smaller_pitch_switch;
-#X obj 392 138 s \$0-resend_smaller_pitch_switch_1;
-#X obj 20 202 r \$0-afraid_swoop_size_switch;
-#X obj 392 202 s \$0-resend_afraid_swoop_size_switch_1;
-#X obj 20 234 r \$0-female_switch;
-#X obj 392 234 s \$0-resend_female_switch_1;
-#X obj 20 266 r \$0-afraid_swoop_short_switch;
-#X obj 392 266 s \$0-afraid_swoop_long_enable;
-#X obj 20 298 r \$0-second_order_shelf_switch;
-#X obj 392 298 s \$0-cascade_enable;
+#N canvas 0 0 910 434 option_switches 0;
+#X obj 399 106 f;
+#X obj 399 170 f;
+#X obj 283 74 t b f;
+#X obj 283 106 t b f;
+#X obj 283 138 t b f;
+#X obj 283 170 t b f;
+#X obj 283 202 expr 1-\$f1;
+#X obj 283 234 expr 1-\$f1;
+#X obj 20 74 r vfb-emotion_signed;
+#X obj 20 106 r vfb-fear;
+#X obj 718 74 s vfb-emotion_last;
+#X obj 718 106 s vfb-fear_last;
+#X obj 20 138 r vfb-paper_levels_switch;
+#X obj 399 74 s vfb-resend_paper_levels_switch_1;
+#X obj 20 170 r vfb-smaller_pitch_switch;
+#X obj 399 138 s vfb-resend_smaller_pitch_switch_1;
+#X obj 20 202 r vfb-afraid_swoop_size_switch;
+#X obj 399 202 s vfb-resend_afraid_swoop_size_switch_1;
+#X obj 20 234 r vfb-female_switch;
+#X obj 399 234 s vfb-resend_female_switch_1;
+#X obj 20 266 r vfb-afraid_swoop_short_switch;
+#X obj 399 266 s vfb-afraid_swoop_long_enable;
+#X obj 20 298 r vfb-second_order_shelf_switch;
+#X obj 399 298 s vfb-cascade_enable;
 #X text 20 10 OPTION SWITCHES: the options behind MORE. Each
 re-sends the current slider values;
 #X connect 2 0 0 0;
@@ -2490,27 +2490,27 @@ re-sends the current slider values;
 #X connect 22 0 7 0;
 #X connect 7 0 23 0;
 #X restore 940 1190 pd option_switches;
-#N canvas 0 0 714 338 console_meters 0;
-#X obj 185 74 print samplerate;
-#X obj 185 170 f;
-#X obj 385 170 print pitch_Hz;
-#X obj 185 106 snapshot~;
-#X obj 385 74 print window_ms;
-#X obj 185 202 print inflection_fired;
-#X obj 185 138 snapshot~;
-#X obj 385 138 print shift_cents;
-#X obj 385 106 expr \$f1/2 + 1.6;
-#X obj 550 74 print delay_ms;
-#X obj 20 74 r \$0-samplerate;
-#X obj 20 106 r \$0-console_tick;
-#X obj 20 138 r \$0-pitch_hz;
-#X obj 20 170 r \$0-onset_gate;
+#N canvas 0 0 721 338 console_meters 0;
+#X obj 192 74 print samplerate;
+#X obj 192 170 f;
+#X obj 392 170 print pitch_Hz;
+#X obj 192 106 snapshot~;
+#X obj 392 74 print window_ms;
+#X obj 192 202 print inflection_fired;
+#X obj 192 138 snapshot~;
+#X obj 392 138 print shift_cents;
+#X obj 392 106 expr \$f1/2 + 0;
+#X obj 557 74 print delay_ms;
+#X obj 20 74 r vfb-samplerate;
+#X obj 20 106 r vfb-console_tick;
+#X obj 20 138 r vfb-pitch_hz;
+#X obj 20 170 r vfb-onset_gate;
 #X obj 20 34 inlet~;
 #X text 76 34 cents_total;
 #X obj 170 34 inlet~;
 #X text 226 34 window_ms;
-#X text 20 10 CONSOLE AND METERS: what gets printed to the
-Pd console and shown on the VU meters;
+#X text 20 10 CONSOLE: levels and pitch and delay printed to
+the Pd console once a second;
 #X connect 14 0 6 0;
 #X connect 6 0 7 0;
 #X connect 3 0 8 0;
@@ -2525,14 +2525,14 @@ Pd console and shown on the VU meters;
 #X connect 11 0 3 0;
 #X connect 13 0 5 0;
 #X restore 20 1370 pd console_meters;
-#N canvas 0 0 718 242 recorder 0;
-#X obj 192 74 sel 1;
-#X obj 273 74 t b b;
-#X msg 354 74 open -bytes 2 live_rec.wav;
-#X msg 354 106 start;
-#X msg 273 106 stop;
-#X obj 582 74 writesf~ 2;
-#X obj 20 74 r \$0-record_switch;
+#N canvas 0 0 725 242 recorder 0;
+#X obj 199 74 sel 1;
+#X obj 280 74 t b b;
+#X msg 361 74 open -bytes 2 live_rec.wav;
+#X msg 361 106 start;
+#X msg 280 106 stop;
+#X obj 589 74 writesf~ 2;
+#X obj 20 74 r vfb-record_switch;
 #X obj 20 34 inlet~;
 #X text 76 34 mic_signal;
 #X obj 170 34 inlet~;
@@ -2550,22 +2550,22 @@ stereo wav;
 #X connect 9 0 5 1;
 #X connect 6 0 0 0;
 #X restore 250 1370 pd recorder;
-#N canvas 0 0 486 402 more_menu 0;
-#X obj 178 74 expr 520 - \$f1*304;
-#X msg 350 74 pos 330 \$1;
-#X obj 178 106 expr 542 - \$f1*306;
-#X msg 350 106 pos 330 \$1;
-#X obj 178 138 expr 564 - \$f1*308;
-#X msg 350 138 pos 330 \$1;
-#X obj 178 170 expr 586 - \$f1*310;
-#X msg 350 170 pos 330 \$1;
-#X obj 178 202 expr 608 - \$f1*312;
-#X msg 350 202 pos 330 \$1;
-#X obj 178 234 expr 630 - \$f1*314;
-#X msg 350 234 pos 330 \$1;
-#X obj 178 266 expr 652 - \$f1*316;
-#X msg 350 266 pos 330 \$1;
-#X obj 20 74 r \$0-more_switch;
+#N canvas 0 0 493 402 more_menu 0;
+#X obj 185 74 expr 520 - \$f1*304;
+#X msg 357 74 pos 330 \$1;
+#X obj 185 106 expr 542 - \$f1*306;
+#X msg 357 106 pos 330 \$1;
+#X obj 185 138 expr 564 - \$f1*308;
+#X msg 357 138 pos 330 \$1;
+#X obj 185 170 expr 586 - \$f1*310;
+#X msg 357 170 pos 330 \$1;
+#X obj 185 202 expr 608 - \$f1*312;
+#X msg 357 202 pos 330 \$1;
+#X obj 185 234 expr 630 - \$f1*314;
+#X msg 357 234 pos 330 \$1;
+#X obj 185 266 expr 652 - \$f1*316;
+#X msg 357 266 pos 330 \$1;
+#X obj 20 74 r vfb-more_switch;
 #X obj 20 362 outlet;
 #X text 82 362 switch_pos0;
 #X obj 170 362 outlet;
@@ -2606,30 +2606,32 @@ panel;
 #X restore 710 1280 pd more_menu;
 #X text 20 1050 DSP STAGES: double-click a box to open it.
 The audio path is the top row from left to right;
-#X connect 49 0 51 0;
-#X connect 50 0 52 0;
+#X connect 46 0 48 0;
+#X connect 47 0 49 0;
+#X connect 49 0 50 0;
+#X connect 46 0 51 0;
+#X connect 51 0 50 1;
+#X connect 46 0 52 0;
 #X connect 52 0 53 0;
-#X connect 49 0 54 0;
-#X connect 54 0 53 1;
-#X connect 49 0 55 0;
-#X connect 54 0 56 0;
-#X connect 53 0 56 1;
-#X connect 54 0 57 0;
-#X connect 53 1 57 1;
-#X connect 56 0 55 1;
-#X connect 57 0 55 2;
-#X connect 55 0 58 0;
-#X connect 58 0 59 0;
-#X connect 52 0 61 0;
-#X connect 54 0 61 1;
-#X connect 49 0 62 0;
-#X connect 59 0 62 1;
-#X connect 63 0 35 0;
-#X connect 63 1 36 0;
-#X connect 63 2 37 0;
-#X connect 63 3 38 0;
-#X connect 63 4 39 0;
-#X connect 63 5 40 0;
-#X connect 63 6 41 0;
+#X connect 51 0 53 1;
+#X connect 50 0 53 2;
+#X connect 52 0 54 0;
+#X connect 51 0 54 1;
+#X connect 50 1 54 2;
+#X connect 53 0 55 0;
+#X connect 54 0 55 1;
+#X connect 11 0 56 0;
+#X connect 55 0 56 1;
+#X connect 49 0 58 0;
+#X connect 51 0 58 1;
+#X connect 46 0 59 0;
+#X connect 56 0 59 1;
+#X connect 60 0 35 0;
+#X connect 60 1 36 0;
+#X connect 60 2 37 0;
+#X connect 60 3 38 0;
+#X connect 60 4 39 0;
+#X connect 60 5 40 0;
+#X connect 60 6 41 0;
 #X coords 0 0 620 370 620 370 3 0 0;
 #X restore 20 20 pd emotion-voice;
