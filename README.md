@@ -3,7 +3,9 @@
 Live sad / happy / afraid voice effect for plugdata (iOS). Based on Rachman et al. 2018 (DAVID) and Aucouturier et al. 2016. Independent re-implementation, not endorsed by the authors. Live effect, requires wired headphones, preferably closed-back or noise-cancelling.
 
 ## Files
-- `vocal-emotion-feedback.pd` - the patch
+- `vocal-emotion-feedback.pd` - the patch for plugdata (uses ELSE `knob`)
+- `vocal-emotion-feedback-desktop.pd` - same patch for vanilla Pure Data (the five knobs are sliders)
+- `panel-desktop.png` - the panel, desktop version
 - `LICENSE` - MIT
 
 ## Use
@@ -11,7 +13,7 @@ Live sad / happy / afraid voice effect for plugdata (iOS). Based on Rachman et a
 2. DSP on, run mode.
 3. Tick USE_MIC.
 
-Requires: ELSE `knob` (bundled with plugdata, not in vanilla Pd), `sigmund~` `expr` `expr~` `fexpr~` `samphold~` `rzero~` `vline~`. If `sigmund~` is missing, turn SMOOTH off.
+Requires: `sigmund~` `expr` `expr~` `fexpr~` `samphold~` `rzero~` `vline~`. The plugdata file also needs ELSE `knob` (bundled with plugdata). If `sigmund~` is missing, turn SMOOTH off.
 
 ## Controls
 | Control | Function |
@@ -50,7 +52,7 @@ Only the shifter delay line adds delay. plugdata's audio buffers are additional.
 Printed once a second: `mic_in_dB`, `src_dB`, `out_dB` (100 = full scale), `f0_Hz`, `window_ms`.
 
 ## Tested
-Desktop Pd 0.54.1 on a test build with sliders in place of the five ELSE knobs (test tones: pitch, shelf gain, inflection, latency, gate, limiter, presets). Live on iPad with a USB headset.
+Desktop Pd 0.54.1, on a test build with plain sliders and toggles and a file standing in for the mic (the DSP is the same as in the shipped files, the controls are not). The desktop file loads with no errors. (test tones: pitch, shelf gain, inflection, latency, gate, limiter, presets). Live on iPad with a USB headset.
 
 ## Known issues
 - GLIDE deviates for about 0.5 s with a 2000 ms ramp.
