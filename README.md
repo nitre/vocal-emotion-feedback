@@ -1,6 +1,6 @@
 # Vocal emotion feedback
 
-Live sad / happy / afraid voice effect for plugdata (iOS). Based on Rachman et al. 2018 (DAVID) and Aucouturier et al. 2016. Independent re-implementation, not endorsed by the authors. Live effect. Requires wired headphones, preferably closed-back or noise-cancelling.
+Live sad / happy / afraid voice effect for plugdata (iOS). Based on Rachman et al. 2018 (DAVID) and Aucouturier et al. 2016. Independent re-implementation, not endorsed by the authors. Live effect, requires wired headphones, preferably closed-back or noise-cancelling.
 
 ## Files
 - `vocal-emotion-feedback.pd` - the patch
@@ -21,12 +21,12 @@ Requires: ELSE `knob` (bundled with plugdata, not in vanilla Pd), `sigmund~` `ex
 | INFLECT | pitch swoop at phrase start, 0 = off (default) |
 | Presets | NEUTRAL, HAPPY / SAD / AFRAID at low / mid / high |
 | MIC GAIN | 25 = unity |
-| VOL (fader) | fader, default 50, output limited to +-0.95 |
+| VOL | fader, default 50, output limited to +-0.95 |
 | GATE 0=off | 0 = off, 1-100 = -69.5 to -20 dBFS |
 | GLIDE ms | 0 = jump |
 | USE_MIC | mic on |
-| SMOOTH | on (default): window 2 x m x pitch period. off: fixed 10 ms |
-| NEUTRAL_reset | no effect |
+| SMOOTH | on (default): shifter window follows the pitch period (about 20 ms). off: fixed 10 ms |
+| NEUTRAL_reset | button, resets to no effect |
 | MORE | RECORD_(may_fail), SHELF_2nd-order, FEMALE_VOICE, SMALLER_PITCH, PAPER_LEVELS, AFRAID_SWOOP_150ms, AFRAID_SWOOP_SIZE |
 
 ## Parameters
