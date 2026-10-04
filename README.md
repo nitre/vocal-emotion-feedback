@@ -1,6 +1,6 @@
 # Vocal emotion feedback
 
-Live sad / happy / afraid voice effect for plugdata (iOS) and desktop Pure Data. Based on Rachman et al. 2018 (DAVID) and Aucouturier et al. 2016. Independent re-implementation, not endorsed by the authors. Live effect. Requires wired headphones, preferably closed-back or noise-cancelling.
+Live sad / happy / afraid voice effect for plugdata (iOS). Based on Rachman et al. 2018 (DAVID) and Aucouturier et al. 2016. Independent re-implementation, not endorsed by the authors. Live effect. Requires wired headphones, preferably closed-back or noise-cancelling.
 
 ## Files
 - `vocal-emotion-feedback.pd` - the patch
@@ -11,7 +11,7 @@ Live sad / happy / afraid voice effect for plugdata (iOS) and desktop Pure Data.
 2. DSP on, run mode.
 3. Tick USE_MIC.
 
-Requires: `sigmund~` `expr` `expr~` `fexpr~` `samphold~` `rzero~` `vline~`. If `sigmund~` is missing, turn SMOOTH off.
+Requires: ELSE `knob` (bundled with plugdata, not in vanilla Pd), `sigmund~` `expr` `expr~` `fexpr~` `samphold~` `rzero~` `vline~`. If `sigmund~` is missing, turn SMOOTH off.
 
 ## Controls
 | Control | Function |
@@ -20,14 +20,14 @@ Requires: `sigmund~` `expr` `expr~` `fexpr~` `samphold~` `rzero~` `vline~`. If `
 | FEAR | afraid vibrato, 8.5 Hz, up to +-40 cents |
 | INFLECT | pitch swoop at phrase start, 0 = off (default) |
 | Presets | NEUTRAL, HAPPY / SAD / AFRAID at low / mid / high |
-| MIC_GAIN | 25 = unity |
-| VOLUME | fader, default 50, output limited to +-0.95 |
-| GATE | 0 = off, 1-100 = -69.5 to -20 dBFS |
-| PITCH_GLIDE_ms | 0 = jump |
+| MIC GAIN | 25 = unity |
+| VOL (fader) | fader, default 50, output limited to +-0.95 |
+| GATE 0=off | 0 = off, 1-100 = -69.5 to -20 dBFS |
+| GLIDE ms | 0 = jump |
 | USE_MIC | mic on |
 | SMOOTH | on (default): window 2 x m x pitch period. off: fixed 10 ms |
 | NEUTRAL_reset | no effect |
-| MORE | RECORD, SHELF, FEMALE_VOICE, SMALLER_PITCH, PAPER_LEVELS, AFRAID_SWOOP_150ms, AFRAID_SWOOP_SIZE |
+| MORE | RECORD_(may_fail), SHELF_2nd-order, FEMALE_VOICE, SMALLER_PITCH, PAPER_LEVELS, AFRAID_SWOOP_150ms, AFRAID_SWOOP_SIZE |
 
 ## Parameters
 | | Pitch (cents) | High band above 8 kHz | Other |
@@ -50,10 +50,10 @@ Only the shifter delay line adds delay. plugdata's audio buffers are additional.
 Printed once a second: `mic_in_dB`, `src_dB`, `out_dB` (100 = full scale), `f0_Hz`, `window_ms`.
 
 ## Tested
-Desktop Pd 0.54.1 (test tones: pitch, shelf gain, inflection, latency, gate, limiter, presets). Live on iPad with a USB headset.
+Desktop Pd 0.54.1 on a test build with sliders in place of the five ELSE knobs (test tones: pitch, shelf gain, inflection, latency, gate, limiter, presets). Live on iPad with a USB headset.
 
 ## Known issues
-- PITCH_GLIDE deviates for about 0.5 s with a 2000 ms ramp.
+- GLIDE deviates for about 0.5 s with a 2000 ms ramp.
 - RECORD fails on iOS outside plugdata's folder.
 - plugdata on iOS has no input chooser.
 
