@@ -21,6 +21,7 @@ Requires these objects (all vanilla Pd): `sigmund~` `expr` `expr~` `fexpr~` `sam
 ## Todo
 
 ### First
+- Add explanations for these 
 - Voicing-aware window freeze (freeze last good window on low confidence / pitch=0, gentle crossfade on re-lock)
 - Delay-time slew limiter (~1–2 oct/s max)
 - Unique `$0` prefix on all `vfb-` names
