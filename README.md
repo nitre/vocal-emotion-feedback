@@ -5,10 +5,11 @@ Live sad / happy / afraid voice effect for plugdata (iOS). Based on Rachman et a
 ## Files
 - `vocal-emotion-feedback.pd` - the patch for plugdata (uses ELSE `knob`)
 - `vocal-emotion-feedback-desktop.pd` - same patch for vanilla Pure Data (the five knobs are sliders)
+- `panel-plugdata.jpg` - the panel in plugdata
 - `panel-desktop.png` - the panel, desktop version
 - `LICENSE` - MIT
 
-![desktop panel](panel-desktop.png)
+![plugdata panel](panel-plugdata.jpg)
 
 ## Use
 1. Put `vocal-emotion-feedback.pd` in plugdata's folder and open it.
