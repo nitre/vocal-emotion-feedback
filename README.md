@@ -40,6 +40,7 @@ Requires these objects (all vanilla Pd): `sigmund~` `expr` `expr~` `fexpr~` `sam
 - Extra diagnostics (voicing confidence, window length)
 - Dynamic opposing shelf for basic formant compensation (controlled by current cents)
 - Optional mild amplitude modulation with the vibrato
+- Optional ANGUS roughness for afraid: sub-harmonics by amplitude modulation at f0/k, high-passed at 4*f0 (Liuni et al. 2020, arXiv:2008.11241). Needs gating when the pitch is lost. Effect on perceived fear untested
 
 
 ## Structure
