@@ -22,11 +22,10 @@ Requires these objects (all vanilla Pd): `sigmund~` `expr` `expr~` `fexpr~` `sam
 ## Todo
 
 ### First
-- Add explanations for these 
-- Voicing-aware window freeze (freeze last good window on low confidence / pitch=0, gentle crossfade on re-lock)
-- Delay-time slew limiter (~1–2 oct/s max)
-- Unique `$0` prefix on all `vfb-` names
-- Soft-knee expander instead of hard gate
+- Voicing-aware window freeze (freeze last good window on low confidence / pitch=0, gentle crossfade on re-lock). With SMOOTH on, the shifter window follows the tracked pitch period. When the tracker loses the pitch (silence, breath, unvoiced sounds) the window can jump around; freezing the last good one and fading back in when the pitch returns should avoid that.
+- Delay-time slew limiter (~1-2 oct/s max). The shifter works by changing a delay time, so a sudden jump in delay is heard as a click or a pitch swoop. Limiting how fast the delay time may change keeps it smooth.
+- Unique `$0` prefix on all `vfb-` names. The control values travel by shared names with a fixed prefix, so two copies open at once interfere (see Known issues). A per-instance `$0` prefix would let several copies coexist.
+- Soft-knee expander instead of hard gate. GATE currently cuts the signal hard below its threshold, which can chop quiet word endings. An expander turns the level down gradually below the threshold instead.
 
 ### Then
 - Adaptive onset detector (noise-floor threshold + hold-off)
