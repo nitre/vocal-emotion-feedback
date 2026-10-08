@@ -22,7 +22,7 @@ Requires these objects (all vanilla Pd): `sigmund~` `expr` `expr~` `fexpr~` `sam
 ## Todo
 
 ### First
-- Download the reference docs for the items below: Giannoulis, Massberg & Reiss, JAES 2012 (expander); the pitch-correction patent US 9747918 (voicing and delay handling); Valhalla's H949 de-glitching article and the McGill pitch-shifting notes (crossfade and pitch-synchronous windows); the plugdata patching basics page and a Pd `$0` guide (`$0` prefix). Also Liuni et al. 2020 (ANGUS) is already downloaded
+- Download the reference docs for the items below: Giannoulis, Massberg & Reiss, JAES 2012 (expander); the pitch-correction patent US 9747918 (voicing and delay handling); Valhalla's H949 de-glitching article and the McGill pitch-shifting notes (crossfade and pitch-synchronous windows); the plugdata patching basics page and a Pd `$0` guide (`$0` prefix)
 - Voicing-aware window freeze (freeze last good window on low confidence / pitch=0, gentle crossfade on re-lock). With SMOOTH on, the shifter window follows the tracked pitch period. When the tracker loses the pitch (silence, breath, unvoiced sounds) the window can jump around; freezing the last good one and fading back in when the pitch returns should avoid that.
 - Delay-time slew limiter (~1-2 oct/s max). The shifter works by changing a delay time, so a sudden jump in delay is heard as a click or a pitch swoop. Limiting how fast the delay time may change keeps it smooth.
 - Unique `$0` prefix on all `vfb-` names. The control values travel by shared names with a fixed prefix, so two copies open at once interfere (see Known issues). A per-instance `$0` prefix would let several copies coexist.
