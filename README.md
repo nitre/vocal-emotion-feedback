@@ -113,9 +113,9 @@ Desktop Pd 0.54.1 with test tones and a file standing in for the mic: pitch, she
 - Shared names use a fixed prefix, so two copies open at once interfere. Open one.
 
 ## Credits
-- Rachman, Liuni, Arias, Lind, Johansson, Hall, Richardson, Watanabe, Dubal, Aucouturier. DAVID. Behavior Research Methods 50:323-343 (2018). DOI 10.3758/s13428-017-0873-y. CC BY 4.0.
+- Rachman, Liuni, Arias, Lind, Johansson, Hall, Richardson, Watanabe, Dubal, Aucouturier. DAVID: An open-source platform for real-time transformation of infra-segmental emotional cues in running speech. Behavior Research Methods 50:323-343 (2018). DOI 10.3758/s13428-017-0873-y. CC BY 4.0. The preset values (Table 2), the algorithm descriptions and the caveats in this README are taken or adapted from this paper.
 - DAVID software, github.com/neuro-team-femto/david. MIT, Copyright (c) 2015 CNRS UMR 9912 STMS / IRCAM.
-- Aucouturier, Johansson, Hall, Segnini, Mercadie, Watanabe. PNAS 113(4):948-953 (2016). DOI 10.1073/pnas.1506552113.
+- Aucouturier, Johansson, Hall, Segnini, Mercadié, Watanabe. Covert digital manipulation of vocal emotion alter speakers' emotional states in a congruent direction. PNAS 113(4):948-953 (2016). DOI 10.1073/pnas.1506552113. The 2016 values quoted above are from the paper and its Supporting Information.
 - Pure Data, plugdata, ELSE, Cyclone.
 
 ## Licence
