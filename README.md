@@ -70,6 +70,19 @@ Below the panel, out of view, each stage is a subpatch: `live_input`, `window_le
 
 The high band is approximated by a 5th-order Butterworth shelf.
 
+## Where the numbers come from
+The presets follow DAVID (Rachman et al. 2018, Table 2), not the original 2016 experiment (Aucouturier et al.). The 2016 study used a hardware processor, then a Max/MSP port, with different values: pitch +25 cents happy / -30 sad, happy inflection starting at -50 cents (400 ms), afraid vibrato 15 cents deep, happy compression, a sad formant shift (ratio 0.9) and 2nd-order shelves, with the effects ramped in over 5 minutes. This patch has no compression, formant shift or slow ramp.
+
+| Setting | Source |
+|---|---|
+| Happy / Sad low, mid, high buttons | DAVID Table 2: +29.5 / +40.9 / +50.0 and -39.8 / -56.2 / -70.0 cents |
+| Afraid low, mid, high buttons | DAVID Table 2: vibrato depth 26 / 34 / 40 cents (male), 13.7 / 20.2 / 33.0 (FEMALE_VOICE) |
+| PAPER_LEVELS | happy inflection depth from DAVID Table 2 (-145 / -159 / -200 cents) instead of a linear scale |
+| AFRAID_SWOOP_SIZE | afraid inflection size from DAVID Table 2 (male and female values) instead of a full +-200 cents |
+| SMALLER_PITCH | this patch only: happy up to +30, sad down to -50 cents |
+
+Caveats from the papers: in DAVID, recognition was above chance but modest (about 33-39% raw against 20% chance), the afraid effect is often heard as sad, and a stronger setting is less natural. The happy effect did not sound more intense at higher settings.
+
 ## Latency (roughly)
 | Setting | Delay |
 |---|---|
