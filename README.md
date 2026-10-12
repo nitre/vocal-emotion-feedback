@@ -137,6 +137,7 @@ The comment pass of 2026-10-12 changed only comments. It was checked in Pd 0.54.
 - RECORD fails on iOS outside plugdata's folder.
 - plugdata on iOS has no input chooser.
 - Shared names use a fixed prefix, so two copies open at once interfere. Open one.
+- Undecided: with FEMALE_VOICE on, the afraid swoop always uses DAVID's female sizes, even when AFRAID_SWOOP_SIZE is off. AFRAID_SWOOP_SIZE only switches the male sizes. It is not known whether this is intended, so the patch is left as it is and documented as it behaves.
 
 ## Credits
 - Rachman, Liuni, Arias, Lind, Johansson, Hall, Richardson, Watanabe, Dubal, Aucouturier. DAVID: An open-source platform for real-time transformation of infra-segmental emotional cues in running speech. Behavior Research Methods 50:323-343 (2018). DOI 10.3758/s13428-017-0873-y. CC BY 4.0. The preset values (Table 2), the algorithm descriptions and the caveats in this README are taken or adapted from this paper.
