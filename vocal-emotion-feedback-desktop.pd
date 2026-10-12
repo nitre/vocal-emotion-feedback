@@ -87,9 +87,8 @@ empty AFRAID_SWOOP_SIZE 38 8 0 11 #E6EBF0 #2A8C99 #3B4754 0;
 if(\$f1<3 \, 500 \, 2000)));
 #X obj 20 74 r vfb-glide_step;
 #X obj 644 74 s vfb-set_glide_ms;
-#X text 20 10 PANEL: the controls live in the top-left
-window. Their values are sent by name and picked up by [r]
-objects below;
+#X text 20 10 GLIDE STEPS: the four-step GLIDE radio sets GLIDE ms to 0 \,
+150 \, 500 or 2000;
 #X connect 1 0 0 0;
 #X connect 0 0 2 0;
 #X restore 480 1280 pd glide_steps;
@@ -141,6 +140,10 @@ knob values and turns DSP on;
 #X connect 9 0 20 0;
 #X connect 12 0 21 0;
 #X connect 4 0 22 0;
+#X text 20 402 Defaults: SMOOTH on \, PAPER_LEVELS on \, EMOTION 100
+(neutral) \, VOL 50 \, MIC GAIN 25 (unity) \, INFLECT 0
+(off). vfb-run_tick 1 starts the timers (console metro \,
+vibrato rate \, onset detector);
 #X restore 20 1280 pd startup;
 #N canvas 0 0 480 818 presets 0;
 #X msg 150 74 100;
@@ -235,6 +238,11 @@ FEAR to a stored pair;
 #X connect 47 0 19 0;
 #X connect 18 0 48 0;
 #X connect 19 0 49 0;
+#X text 20 722 Values from DAVID (Rachman et al. 2018) Table 2: EMOTION 159
+/ 182 / 200 = happy low / mid / high (+29.5 / +40.9 / +50
+cents). EMOTION 43 / 20 / 0 = sad (-39.8 / -56.2 / -70
+cents). Afraid keeps EMOTION neutral and sets FEAR 65 / 85 /
+100 (vibrato depth \, see pitch_control);
 #X restore 250 1280 pd presets;
 #N canvas 0 0 2083 338 live_input 0;
 #X obj 20 74 adc~ 1;
@@ -291,6 +299,12 @@ noise gate then USE_MIC and MIC_GAIN;
 #X connect 20 0 1 1;
 #X connect 21 0 3 0;
 #X connect 12 0 22 0;
+#X text 20 338 Gate: a fast peak follower (about 2 ms) opens it when the
+level passes -70 + 0.5 x GATE dBFS (GATE 1-100 = -69.5 to
+-20 dBFS \, 0 = always open). It closes with a release of
+about 50 ms at 44.1 kHz. MIC GAIN / 25 \, so 25 = unity. The
+1 s metro prints mic_in_dB and after_gain_dB and sends
+vfb-console_tick;
 #X restore 20 1100 pd live_input;
 #N canvas 0 0 2020 434 pitch_control 0;
 #X obj 311 74 - 100;
@@ -358,6 +372,14 @@ in cents. Glide and vibrato are added here;
 #X connect 25 0 6 0;
 #X connect 26 0 2 1;
 #X connect 27 0 6 1;
+#X text 20 434 EMOTION 0-200 becomes -1..+1 (sent as vfb-emotion_signed) \,
+then cents: x 50 happy and x 70 sad (SMALLER_PITCH: x 30 and
+x 50). GLIDE ramps the change (vline~) and lop~ 20 smooths
+it;
+#X text 20 534 Afraid vibrato: about 8.5 Hz. The rate is redrawn every 120
+ms within +-30 percent (random / 333) and smoothed. Depth =
+0.4 x FEAR cents (40 at FEAR 100). FEMALE_VOICE: DAVID Table
+2 female depths 13.7 / 20.2 / 33 cents at FEAR 65 / 85 / 100;
 #X restore 20 1190 pd pitch_control;
 #N canvas 0 0 1738 274 onset_detector 0;
 #X obj 20 74 abs~;
@@ -410,6 +432,12 @@ the inflection swoop can fire;
 #X connect 18 0 2 0;
 #X connect 18 0 8 1;
 #X connect 8 0 19 0;
+#X text 20 178 Peak follower (decay about 20 ms at 44.1 kHz) checked every
+2 ms. An onset fires when the level rises past 0.08 (about
+-22 dBFS) after at least 300 ms below it \, and at most once
+every 500 ms. Each onset bangs vfb-onset_gate \, which
+starts the swoop curves in inflection and prints
+inflection_fired;
 #X restore 710 1190 pd onset_detector;
 #N canvas 0 0 1269 562 inflection 0;
 #N canvas 0 0 450 300 infl 0;
@@ -471,6 +499,9 @@ the inflection swoop can fire;
 outlet;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
+#X text 300 10 Happy swoop for vline~ (DAVID happy profile): starts at -200
+cents \, rises to +140 \, back to 0 at 500 ms. Breakpoints
+are target \, ramp ms \, start ms, f 40;
 #X restore
 339 74 pd infl;
 #N canvas 0 0 450 300 infl2 0;
@@ -534,6 +565,8 @@ outlet;
 #X
 connect 0 0 1 0;
 #X connect 1 0 2 0;
+#X text 300 10 Afraid swoop \, long: starts at +120 cents \, swings between
+-200 and +200 \, back to 0 at 500 ms, f 40;
 #X restore 805 234 pd
 infl2;
 #N canvas 0 0 450 300 infl2s 0;
@@ -559,6 +592,8 @@ infl2;
 #X connect 0 0 1
 0;
 #X connect 1 0 2 0;
+#X text 300 10 Afraid swoop \, short (AFRAID_SWOOP_150ms): starts at +120
+cents \, swings between -200 and +200 \, back to 0 at 150 ms, f 40;
 #X restore 805 170 pd infl2s;
 #X obj 805 74 vline~;
 #X obj 914 138 vline~;
@@ -650,6 +685,15 @@ are added to the pitch shift;
 #X connect 31 0 5 1;
 #X connect 32 0 5 1;
 #X connect 33 0 6 1;
+#X text 20 562 infl: happy swoop \, scaled by the happy side of EMOTION.
+PAPER_LEVELS on: DAVID Table 2 depths (-145 / -159 / -200
+cents at the low / mid / high presets). Off: linear;
+#X text 20 642 infl2 (500 ms) or infl2s (AFRAID_SWOOP_150ms): afraid swoop
+\, scaled by FEAR. FEMALE_VOICE on: DAVID Table 2 female
+sizes \, whatever AFRAID_SWOOP_SIZE says. Otherwise
+AFRAID_SWOOP_SIZE on: DAVID Table 2 male sizes. Both off:
+linear up to the full +-200 cents. Both swoops are scaled by
+INFLECT / 100 and added to the pitch shift;
 #X restore 250 1190 pd inflection;
 #N canvas 0 0 832 210 shifter_speed 0;
 #X obj 20 74 *~ 0.000577623;
@@ -683,6 +727,10 @@ into the speed of the two delay taps;
 #X connect 11 0 5 1;
 #X connect 6 0 13 0;
 #X connect 8 0 15 0;
+#X text 20 210 Delay-line pitch shifter. Ratio = 2^(cents / 1200)
+(0.000577623 = ln 2 / 1200). The taps sweep the window at (1
+- ratio) x 1000 / window_ms Hz. phasor2 runs half a cycle
+behind phasor1;
 #X restore 480 1190 pd shifter_speed;
 #N canvas 0 0 1455 370 window_length 0;
 #X obj 20 74 sigmund~ -npts 1024 -hop 512 pitch;
@@ -730,6 +778,14 @@ window that follows the voice (SMOOTH);
 #X connect 9 0 15 0;
 #X connect 11 0 16 0;
 #X connect 1 0 17 0;
+#X text 20 370 SMOOTH on: sigmund~ (1024-point window \, hop 512) gives the
+pitch. Pitches outside 70-500 Hz are ignored \, so the
+window keeps its last value. In range the window is 2 x n
+pitch periods with n = round(f0 / 100) \, at least 1 \,
+which is close to 20 ms. It ramps over 60 ms and is clipped
+to 5-40 ms. SMOOTH off: fixed 10 ms;
+#X text 20 510 The set 20 / set 10 messages also reset the window held in
+the two taps at once when SMOOTH is switched;
 #X restore 250 1100 pd window_length;
 #N canvas 0 0 480 242 delay_line 0;
 #X obj 108 74 delwrite~ vfb-delay 100;
@@ -739,12 +795,14 @@ window that follows the voice (SMOOTH);
 #X text 76 34 mic_signal;
 #X obj 20 202 outlet~;
 #X text 82 202 order_signal;
-#X text 20 10 DELAY LINE: the mic is written into the delay
-line and the two tap outputs are summed;
+#X text 20 10 DELAY LINE: the mic is scaled by 0.9 and written into a 100
+ms delay line. The two taps read it back;
 #X connect 3 0 1 0;
 #X connect 1 0 0 0;
 #X connect 1 0 2 0;
 #X connect 2 0 5 0;
+#X text 20 242 order_signal is silent (x 0). It only makes Pd run this
+write before the two taps read the line;
 #X restore 480 1100 pd delay_line;
 #N canvas 0 0 961 338 delay_tap_1 0;
 #X obj 20 74 snapshot~;
@@ -789,6 +847,12 @@ point and fades it with a Hann weight;
 #X connect 11 0 20 0;
 #X connect 12 0 1 0;
 #X connect 13 0 1 0;
+#X text 20 338 Delay = phasor x window \, so 0 to window ms (window / 2 on
+average). The window is only taken when the phasor wraps
+(rzero~ / abs~ / > 0.5 spot the jump) \, so it never changes
+mid-sweep. Hann weight 0.5 - 0.5 cos(2 pi phasor) is silent
+at the jump. The two taps are half a cycle apart \, so their
+weights add up to 1;
 #X restore 710 1100 pd delay_tap_1;
 #N canvas 0 0 961 338 delay_tap_2 0;
 #X obj 20 74 snapshot~;
@@ -833,6 +897,8 @@ point and fades it with a Hann weight;
 #X connect 11 0 20 0;
 #X connect 12 0 1 0;
 #X connect 13 0 1 0;
+#X text 20 338 Same as delay_tap_1 \, driven by phasor2 (half a cycle
+later);
 #X restore 940 1100 pd delay_tap_2;
 #N canvas 0 0 2573 466 high_shelf 0;
 #X obj 20 74 +~;
@@ -2412,6 +2478,16 @@ are looked up from tables;
 #X connect 26 0 1 1;
 #X connect 27 0 17 1;
 #X connect 28 0 16 1;
+#X text 20 466 The two taps are summed here. EMOTION picks a slope in dB
+per octave. PAPER_LEVELS on: DAVID Table 2 \, +5.8 / +6.6 /
++9.5 happy and -7.8 / -9.6 / -12 sad at the preset points.
+Off: linear up to +9.5 and -12;
+#X text 20 566 The slope x 1.14 picks a coefficient set from vfb-shelfc:
+5th order (two biquads and a first-order section) \, 105
+steps of 0.25 from -14.5 \, one block per sample-rate band
+(up to 46 kHz \, 68 kHz \, 92 kHz \, above). The same value
+scales this path by 10^(value / 20). SHELF_2nd-order
+switches to the single biquad from vfb-shelfr instead;
 #X restore 1170 1100 pd high_shelf;
 #N canvas 0 0 771 242 output 0;
 #X obj 424 74 env~ 8192 8192;
@@ -2441,6 +2517,8 @@ headphones;
 #X connect 1 0 2 0;
 #X connect 5 0 12 0;
 #X connect 7 0 1 0;
+#X text 20 242 VOL / 100 \, then a hard clip at +-0.95 \, the same signal
+to both channels. Prints out_dB each second;
 #X restore 1400 1100 pd output;
 #N canvas 0 0 910 434 option_switches 0;
 #X obj 399 106 f;
@@ -2489,6 +2567,12 @@ re-sends the current slider values;
 #X connect 6 0 21 0;
 #X connect 22 0 7 0;
 #X connect 7 0 23 0;
+#X text 20 338 Each switch first sends its value to the cold inlets that
+use it (vfb-resend_..._1). Then the stored EMOTION and FEAR
+are re-sent (vfb-emotion_last \, vfb-fear_last) so the
+change applies at once. AFRAID_SWOOP_150ms also turns the
+long swoop off. SHELF_2nd-order also turns the 5th-order
+path off;
 #X restore 940 1190 pd option_switches;
 #N canvas 0 0 721 338 console_meters 0;
 #X obj 192 74 print samplerate;
@@ -2524,6 +2608,10 @@ the Pd console once a second;
 #X connect 11 0 1 0;
 #X connect 11 0 3 0;
 #X connect 13 0 5 0;
+#X text 20 242 delay_ms = window / 2 (plugdata audio buffers not included).
+shift_cents is the total shift with vibrato and swoop.
+inflection_fired prints at each onset. samplerate prints
+once at load;
 #X restore 20 1370 pd console_meters;
 #N canvas 0 0 725 242 recorder 0;
 #X obj 199 74 sel 1;
@@ -2549,6 +2637,10 @@ stereo wav;
 #X connect 7 0 5 0;
 #X connect 9 0 5 1;
 #X connect 6 0 0 0;
+#X text 20 146 RECORD on: opens live_rec.wav (16-bit stereo \, left = mic
+after gate and gain \, right = output) and starts. Off:
+stops and closes the file. The path is relative to the patch
+folder;
 #X restore 250 1370 pd recorder;
 #N canvas 0 0 493 402 more_menu 0;
 #X obj 185 74 expr 520 - \$f1*304;
@@ -2603,6 +2695,8 @@ panel;
 #X connect 14 0 8 0;
 #X connect 14 0 10 0;
 #X connect 14 0 12 0;
+#X text 20 402 MORE on moves the seven option switches up onto the panel.
+Off parks them below it \, out of view;
 #X restore 710 1280 pd more_menu;
 #X text 20 1050 DSP STAGES: double-click a box to open it.
 The audio path is the top row from left to right;
@@ -2633,5 +2727,10 @@ The audio path is the top row from left to right;
 #X connect 60 4 39 0;
 #X connect 60 5 40 0;
 #X connect 60 6 41 0;
+#X text 20 990 PANEL: the controls live in the top-left 620 x 370 area
+(graph on parent). Their values are sent by name and picked
+up by [r] objects in the stages below;
+#X text 20 520 MORE switches: parked here off the panel. more_menu moves
+them up onto it when MORE is on, f 40;
 #X coords 0 0 620 370 620 370 3 0 0;
 #X restore 20 20 pd emotion-voice;
